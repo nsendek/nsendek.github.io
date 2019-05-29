@@ -39,6 +39,11 @@
 .buttonExplore:hover {
   background-color: rgba(163, 29, 95, 0.5);
   color: rgba(190, 190, 190, 1);
+  transform: scale(1.2);
+}
+
+.return:hover {
+  cursor: pointer;
 }
 
 .page{
@@ -49,13 +54,16 @@
     background-position: 50% 50%;
     width:100%;
     height:100%;
-    top:0px;
-    left:0px;
-    z-index:1000;
+    top:0;
+    left:0;
+
 }
 
 .home{
-  background-image: url("test2.png");
+  background-image: url("./BackgroundImages/test2.png");
+}
+.explore{
+  background-image: url("./BackgroundImages/test2.png");
 }
 
 .fade-in {
@@ -89,8 +97,6 @@
 
    }
 }
-
-
 
 
 @-moz-keyframes fadeIn {

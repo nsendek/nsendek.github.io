@@ -1,9 +1,8 @@
 import React, { Component} from 'react';
-import Explore from './ExploreButton.js'
 import './index.css';
+import ExploreButton from './ExploreButton.js'
 
-
-class Homepage extends Component {
+class HomePage extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,14 +23,14 @@ class Homepage extends Component {
           Artist - Programmer - Creative
         </p>
       </h1>
-      <Explore name = "ABOUT ME" tD= {2500}/>
-      <Explore name = "PORTFOLIO" tD= {3000}/>
-      <Explore name = "CONTACT" tD= {3500}/>
-      <Explore name = "RESUME" tD= {4000}/>
+      <ExploreButton name = "ABOUT ME" tD= {2500}/>
+      <ExploreButton name = "PORTFOLIO" tD= {3000}/>
+      <ExploreButton name = "CONTACT" tD= {3500}/>
+      <ExploreButton name = "RESUME" tD= {4000}/>
     </div>
     );
   }
 }
 
 
-export default Homepage;
+export default HomePage;

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 
 
-class Explore extends Component {
+class ExploreButton extends Component {
   constructor() {
     super();
     this.state = {
@@ -34,4 +34,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null,mapDispatchToProps)(Explore);
+export default connect(null,mapDispatchToProps)(ExploreButton);

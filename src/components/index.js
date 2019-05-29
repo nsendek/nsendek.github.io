@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Homepage from './Homepage';
+import HomePage from './HomePage';
+import ExplorePage from './ExplorePage';
 import { connect } from 'react-redux';
 
 class WebSite extends Component {
-
 
 componentWillMount(){
   document.body.style.backgroundColor = "black";
@@ -13,8 +13,8 @@ componentWillMount(){
     var tab = this.props.tab;
     return (
       this.props.tab === "HOMEPAGE"
-      ?   <Homepage/>
-      :   null
+      ?   <HomePage/>
+      :   <ExplorePage/>
     );
   }
 }

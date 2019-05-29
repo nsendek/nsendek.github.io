@@ -11,7 +11,7 @@ class ContactContent extends Component {
   render() {
     return (
       <div className = "content" align = "center">
-        <h1 className="Homepage-Header ">
+        <h1 className="Homepage-Header">
           CONTACT
         </h1>
         <p className="Homepage-Sub ">

@@ -18,7 +18,7 @@ class ExplorePage extends Component {
 
   render() {
     return (
-      <div>
+      <div className = "explore">
         <SideBar/>
 
         {this.props.tab === "CONTACT"

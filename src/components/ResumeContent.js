@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './SideBar.css';
+import './ExplorePage.css';
 import Resume from './Resume.pdf';
 
 class ContactContent extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SideBar.css';
+import './ExplorePage.css';
 import git from './logos/github.png';
 import link from './logos/linkedin.png'
 import facebook from './logos/facebook.png';

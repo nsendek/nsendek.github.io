@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 
 
-class ExploreButton extends Component {
+class HomePageButton extends Component {
   constructor() {
     super();
     this.state = {
@@ -19,7 +19,7 @@ class ExploreButton extends Component {
   render() {
     return (
         <div>
-          <button className = "fade-in button buttonExplore " onClick={this.handleClick}>
+          <button className = "fade-in HomePage-button" onClick={this.handleClick}>
              {this.props.name}
           </button>
         </div>
@@ -34,4 +34,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null,mapDispatchToProps)(ExploreButton);
+export default connect(null,mapDispatchToProps)(HomePageButton);

@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-
+import './ExplorePage.css';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 
@@ -15,11 +15,11 @@ class ExploreButton extends Component {
   handleClick = () => {
   this.props.changeTab(this.props.name);
   }
-//className = "fade-in button buttonExplore "
+//
   render() {
     return (
         <div>
-          <button  onClick={this.handleClick}>
+          <button  className = "button" onClick={this.handleClick}>
              {this.props.name}
           </button>
         </div>

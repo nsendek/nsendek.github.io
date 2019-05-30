@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import './HomePage.css';
 import ExploreButton from './HomePageButton.js'
+import ContactContent from './ContactContent';
 
 class HomePage extends Component {
   constructor() {
@@ -25,8 +26,9 @@ class HomePage extends Component {
       </h1>
       <ExploreButton name = "ABOUT ME" tD= {2500}/>
       <ExploreButton name = "PORTFOLIO" tD= {3000}/>
-      <ExploreButton name = "CONTACT" tD= {3500}/>
       <ExploreButton name = "RESUME" tD= {4000}/>
+      
+      <span> <ContactContent /> </span>
     </div>
     );
   }

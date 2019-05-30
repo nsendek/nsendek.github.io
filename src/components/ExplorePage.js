@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import SideBar from './SideBar';
+import './ExplorePage.css';
 import ContactContent from './ContactContent';
 import ResumeContent from './ResumeContent';
 import { connect } from 'react-redux';
@@ -18,13 +19,13 @@ class ExplorePage extends Component {
 
   renderContent = () => {
     switch (this.props.tab) {
-      case "CONTACT":
-         return (
-           <ContactContent />
-         );
       case "RESUME":
          return (
            <ResumeContent />
+        );
+      case "PORTFOLIO":
+        return (
+          null
         );
       default:
         return null;
@@ -33,11 +34,11 @@ class ExplorePage extends Component {
 
   render() {
     return (
-      <div className = "explore">
+      <div className = "explore page">
         <SideBar/>
         {this.renderContent()}
 
-    </div>
+      </div>
     );
   }
 }

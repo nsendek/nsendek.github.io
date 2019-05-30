@@ -19,7 +19,7 @@ class ExploreButton extends Component {
   render() {
     return (
         <div>
-          <button  className = "button" onClick={this.handleClick}>
+          <button  className = "Explore-button" onClick={this.handleClick}>
              {this.props.name}
           </button>
         </div>

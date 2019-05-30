@@ -9,38 +9,30 @@ class ContactContent extends Component {
 
   render() {
     return (
-      <div className = "content" align = "center">
-        <p className="Homepage-Sub ">
-          EMAIL: nsendek@mit.edu
-        </p>
-        <p className="Homepage-Sub ">
-          PHONE: 720-775-8035
-        </p>
+      <div className = "icon-bar">
 
-        <div className = "icon" width="300px" height="300px" >
-          <a href="https://github.com/nsendek" target="_blank">
-            <img src={git} width="100%" height="100%"/>
+          <a  href="https://github.com/nsendek" target="_blank">
+            <img src={git} width="100%" height="100%" />
           </a>
-          </div>
 
-          <div className = "icon" width="300px" height="300px" >
-              <a href="https://www.linkedin.com/in/nikosendek/" target="_blank">
+
+              <a className = "icon" href="https://www.linkedin.com/in/nikosendek/" target="_blank">
                 <img src={link} width="100%" height="100%"/>
               </a>
-          </div>
-          <div className = "icon" width="300px" height="300px" >
-                <a href="https://www.facebook.com/niko.sendek" target="_blank">
+
+
+                <a className = "icon" href="https://www.facebook.com/niko.sendek" target="_blank">
                   <img src={facebook} width="100%" height="100%"/>
                 </a>
-          </div>
 
-          <div className = "icon" width="300px" height="300px" >
-            <a href="https://www.instagram.com/nikodmas/" target="_blank">
+
+
+            <a className = "icon" href="https://www.instagram.com/nikodmas/" target="_blank">
               <img src={insta} width="100%" height="100%"/>
             </a>
-          </div>
-
+  
       </div>
+
     );
   }
 }

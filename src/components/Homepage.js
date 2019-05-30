@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
-import './index.css';
-import ExploreButton from './ExploreButton.js'
+import './HomePage.css';
+import ExploreButton from './HomePageButton.js'
 
 class HomePage extends Component {
   constructor() {

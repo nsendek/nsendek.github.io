@@ -1,5 +1,5 @@
 .page{
-    opacity:0.8;
+
     position:fixed;
     background-size:1600px;
     background-repeat: no-repeat;
@@ -32,13 +32,13 @@ div.content {
 }
 
 .icon {
-  width: 200px;
-  height: 200px;
-  padding: 20px;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
 
 }
 .icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 700px) {

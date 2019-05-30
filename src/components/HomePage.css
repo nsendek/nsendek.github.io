@@ -26,7 +26,7 @@
   margin: 16px 2px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-  cursor: pointer;
+  cursor: default;
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .return:hover {
-  cursor: pointer;
+  cursor: default;
 }
 
 .page{
@@ -55,7 +55,6 @@
     height:100%;
     top:0;
     left:0;
-
 }
 
 .home{

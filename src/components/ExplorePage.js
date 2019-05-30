@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import SideBar from './SideBar';
-import './index.css';
 import ContactContent from './ContactContent';
+import ResumeContent from './ResumeContent';
 import { connect } from 'react-redux';
 
 class ExplorePage extends Component {
@@ -16,17 +16,27 @@ class ExplorePage extends Component {
     console.log(this.props.tab);
   }
 
+  renderContent = () => {
+    switch (this.props.tab) {
+      case "CONTACT":
+         return (
+           <ContactContent />
+         );
+      case "RESUME":
+         return (
+           <ResumeContent />
+        );
+      default:
+        return null;
+    }
+  }
+
   render() {
     return (
       <div className = "explore">
         <SideBar/>
+        {this.renderContent()}
 
-        {this.props.tab === "CONTACT"
-        ?
-          <ContactContent />
-        :
-          null
-        }
     </div>
     );
   }

@@ -7,9 +7,7 @@ class ContactContent extends Component {
 
   render() {
     return (
-
         <embed src={Resume} width="100%" height="100%"/>
-  
     );
   }
 }

@@ -1,20 +1,17 @@
 import React, { Component} from 'react';
-import SideBar from './SideBar';
+import SmartSideBar from './SmartSideBar';
 import './ExplorePage.css';
 import ContactContent from './ContactContent';
 import ResumeContent from './ResumeContent';
+import AboutMeContent from './AboutMeContent';
 import { connect } from 'react-redux';
 
+
 class ExplorePage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-
     }
-  }
-
-  handleClick = () => {
-    console.log(this.props.tab);
   }
 
   renderContent = () => {
@@ -23,9 +20,9 @@ class ExplorePage extends Component {
          return (
            <ResumeContent />
         );
-      case "PORTFOLIO":
+      case "ABOUT ME":
         return (
-          null
+          <AboutMeContent />
         );
       default:
         return null;
@@ -35,9 +32,8 @@ class ExplorePage extends Component {
   render() {
     return (
       <div className = "explore page">
-        <SideBar/>
+        <SmartSideBar/>
         {this.renderContent()}
-
       </div>
     );
   }

@@ -61,7 +61,7 @@
 }
 
 .home{
-  background-image: url("./BackgroundImages/test2.png");
+  background-image: url("./resources/test2.png");
 }
 
 
@@ -81,7 +81,6 @@
    to {
      opacity:1;
      margin-top: 1000
-
    }
 }
 

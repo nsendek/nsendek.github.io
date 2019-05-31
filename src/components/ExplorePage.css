@@ -30,7 +30,7 @@
 }
 
 .explore{
-  background-image: url("./BackgroundImages/test2.png");
+  background-image: url("./resources/test2.png");
 }
 
 .Explore-button:hover {
@@ -77,6 +77,14 @@ div.content {
   color: rgba(190, 190, 190, 1);
 }
 
+.menu-icon { /* Set a specific width */
+  width: 50px; /* Full-width */
+  height : 50px;
+  overflow: auto;
+  transition: all 0.4s ease;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
 .icon-bar { /* Set a specific width */
   width: 150px; /* Full-width */
   overflow: auto;
@@ -86,20 +94,18 @@ div.content {
   bottom:0;
 }
 
-
 .icon-bar a {
-  float: left; /* Float links side by side */
-  align: center; /* Center-align text */
-  width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
-  padding: 2px 2px; /* Some top and bottom padding */
+  float: left;
+  align: center;
+  width: 20%;
+  padding: 2px 2px;
 
-  color: white; /* White text color */
+  color: white;
   cursor: default !important;
   transition: all 0.4s ease;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
-
 .icon-bar a:hover {
   transform: scale(.9);
   opacity: 0.5;

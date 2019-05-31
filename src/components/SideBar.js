@@ -14,13 +14,11 @@ class SideBar extends Component {
               Niko Sendek
         </a>
 
-        <a> <ExploreButton name = "ABOUT ME" tD= {2500} /> </a>
-        <a> <ExploreButton name = "PORTFOLIO" tD= {3000}/> </a>
-        <a> <ExploreButton name = "RESUME" tD= {4000}/> </a>
+        <a> <ExploreButton name= "ABOUT ME" /> </a>
+        <a> <ExploreButton name= "PORTFOLIO" /> </a>
+        <a> <ExploreButton name= "RESUME" /> </a>
 
         <a> <span> <ContactContent /> </span> </a>
-
-
 
       </div>
     );

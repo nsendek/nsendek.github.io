@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import updateState from './reducers'
 
-import WebSite from './components'
+import WebSite from './components/index.js'
 
 const store = createStore(updateState)
 

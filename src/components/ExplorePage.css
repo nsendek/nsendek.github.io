@@ -1,8 +1,8 @@
 .page{
 
     position:fixed;
-    background-size:1600px;
     background-repeat: no-repeat;
+    background-size:cover;
     background-position: 50% 50%;
     width:100%;
     height:100%;
@@ -68,6 +68,23 @@ div.content {
   height: 100%;
 }
 
+.Content-Header {
+  text-align: center;
+  font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-size: 36px;
+  transition: opacity 4s;
+  opacity: 1;
+ color: rgba(190, 190, 190, 1);
+}
+
+.Content-Sub {
+  text-align: center;
+  font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-size: 2vw;
+  font-style: italic;
+  color: rgba(190, 190, 190, 1);
+}
+
 .SideBar-Header {
   text-align: center;
   font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
@@ -84,6 +101,10 @@ div.content {
   transition: all 0.4s ease;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+}
+.menu-icon:hover {
+  transform: scale(.9);
+  opacity: 0.5;
 }
 .icon-bar { /* Set a specific width */
   width: 150px; /* Full-width */

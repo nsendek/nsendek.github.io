@@ -1,44 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
-import './ExplorePage.css';
+import './styles/ExplorePage.css';
 import ExploreButton from './ExploreButton.js';
 import ContactContent from './ContactContent';
 import SideBar from './SideBar';
-import menu from './resources/menu-icon.png'
+import menu from './resources/menu-icon.png';
+
+const MOBILE_SCREEN_WIDTH = 700;
 
 class SmartSideBar extends Component {
-  // responsive SideBar
+  // responsive SideBar that changes and expands (animated) based on screen size.
   constructor(props) {
     super(props);
     this.state = {
-      windowWidth : null,
       mobile : false,
       showSideBar : true
     }
   }
 
   updateDimensions = () => {
-    if (window.innerWidth > 700) { // going to desktop mode
-      this.setState({
-        windowWidth: window.innerWidth,
-        mobile : false,
-        showSideBar: true}
-      );
-    } else { // going to mobile mode
-
-      if (this.state.mobile) { //already mobile
+    if (window.innerWidth > MOBILE_SCREEN_WIDTH) { //going to desktop mode
+      if (this.state.mobile) { // not already desktop
         this.setState({
-          windowWidth: window.innerWidth,
-        });
-      } else {
+          mobile : false,
+          showSideBar: true}
+        );
+      }
+    } else { //going to mobile mode
+      if (!this.state.mobile) { //not already mobile
         this.setState({
           windowWidth: window.innerWidth,
           mobile: true,
           showSideBar: false
         });
       }
-
     }
   }
 
@@ -59,15 +55,19 @@ class SmartSideBar extends Component {
     return (
       <div>
           {
-            this.state.showSideBar
-            ? <SideBar/>
-            : null
+            this.state.mobile // in mobile mode
+            ? this.state.showSideBar
+              ? <SideBar />   //<SideBar  entry = {true} />
+              :  null // <SideBar exit true = {false} />
+
+            : <SideBar />
+
           }
           {
             this.state.mobile
             ?
             <div className = "menu-icon" onClick= {this.handleClick}>
-            <img src={menu} width="50px" height="50px"/>
+            <img src={menu} width="100%" height="100%"/>
             </div>
             :
             null

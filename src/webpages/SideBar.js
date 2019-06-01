@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
-import './ExplorePage.css';
+import './styles/ExplorePage.css';
 import ExploreButton from './ExploreButton.js';
 import ContactContent from './ContactContent';
 
 class SideBar extends Component {
 
   render() {
+     var entry = "";
+     if (this.props.entry) {
+       entry = "slide-in";
+     }
+
     return (
-      <div className="sidebar" align = "center">
+      <div className={`sidebar ${entry}`}  align = "center">
         <a className="SideBar-Header return" onClick = {() => {this.props.changeTab("HOMEPAGE")}}>
               Niko Sendek
         </a>

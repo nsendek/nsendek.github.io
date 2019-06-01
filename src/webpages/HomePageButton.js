@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import './HomePage.css';
+import './styles/HomePage.css';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 

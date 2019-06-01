@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import './HomePage.css';
+import './styles/HomePage.css';
 import ExploreButton from './HomePageButton.js'
 import ContactContent from './ContactContent';
 
@@ -27,7 +27,7 @@ class HomePage extends Component {
       <ExploreButton name = "ABOUT ME" tD= {2500}/>
       <ExploreButton name = "PORTFOLIO" tD= {3000}/>
       <ExploreButton name = "RESUME" tD= {4000}/>
-      
+
       <span> <ContactContent /> </span>
     </div>
     );

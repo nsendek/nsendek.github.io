@@ -1,15 +1,3 @@
-.page{
-
-    position:fixed;
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: 50% 50%;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-}
-
 .Explore-button {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -30,7 +18,7 @@
 }
 
 .explore{
-  background-image: url("./resources/test2.png");
+  background-image: url("../resources/test2.png");
 }
 
 .Explore-button:hover {
@@ -94,9 +82,9 @@ div.content {
   color: rgba(190, 190, 190, 1);
 }
 
-.menu-icon { /* Set a specific width */
-  width: 50px; /* Full-width */
-  height : 50px;
+.menu-icon {
+  width: 50px !important;
+  height : 50px !important;
   overflow: auto;
   transition: all 0.4s ease;
   -webkit-transition-duration: 0.4s;
@@ -106,8 +94,9 @@ div.content {
   transform: scale(.9);
   opacity: 0.5;
 }
-.icon-bar { /* Set a specific width */
-  width: 150px; /* Full-width */
+
+.icon-bar {
+  width: 150px;
   overflow: auto;
   transition: all 0.4s ease;
   -webkit-transition-duration: 0.4s;
@@ -133,13 +122,41 @@ div.content {
 
 }
 
+.slide-in {
+  animation: entry ease 2s;
+  -webkit-animation: entry ease 2s;
+  -moz-animation: entry ease 2s;
+  -o-animation: entry ease 2s;
+  -ms-animation: entry ease 2s;
+}
+@keyframes entry {
+  from {
+     bottom: 368px;
+   }
+   to {
+    bottom: 0px;;
+   }
+}
+
+@-webkit-keyframes entry {
+  from {
+     bottom: 368px;
+   }
+   to {
+    bottom: 0px ;
+   }
+}
+
+
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
-  }
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 
+  }
   .sidebar span {
      bottom: 0;
      left: 1;

@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import SmartSideBar from './SmartSideBar';
-import './ExplorePage.css';
+import './styles/ExplorePage.css';
 import ContactContent from './ContactContent';
 import ResumeContent from './ResumeContent';
 import AboutMeContent from './AboutMeContent';

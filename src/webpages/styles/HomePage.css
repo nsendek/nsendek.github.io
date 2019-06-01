@@ -1,20 +1,3 @@
-.page{
-    opacity:0.8;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-}
-
-.page span {
-   position: absolute;
-   bottom: 0;
-   right: 0;
-}
-
 .Homepage-Header {
   text-align: center;
   font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
@@ -61,7 +44,7 @@
 }
 
 .home{
-  background-image: url("./resources/test2.png");
+  background-image: url("../resources/test2.png");
 }
 
 
@@ -95,7 +78,6 @@
 
    }
 }
-
 
 @-moz-keyframes fadeIn {
   from {

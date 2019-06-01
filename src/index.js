@@ -4,8 +4,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import updateState from './reducers'
-
-import WebSite from './components/index.js'
+import './index.css';
+import WebSite from './webpages/index.js'
 
 const store = createStore(updateState)
 

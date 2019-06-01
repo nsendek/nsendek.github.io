@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './ExplorePage.css';
-import git from './logos/github.png';
-import link from './logos/linkedin.png'
-import facebook from './logos/facebook.png';
-import insta from './logos/instagram.png';
+import './styles/ExplorePage.css';
+import git from './resources/github.png';
+import link from './resources/linkedin.png'
+import facebook from './resources/facebook.png';
+import insta from './resources/instagram.png';
 
 class ContactContent extends Component {
 

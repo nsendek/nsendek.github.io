@@ -1,3 +1,7 @@
+.explore{
+  background-image: url("../resources/test2.png");
+}
+
 .Explore-button {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -17,10 +21,6 @@
   border: 2px solid rgba(190, 190, 190, 1);
 }
 
-.explore{
-  background-image: url("../resources/test2.png");
-}
-
 .Explore-button:hover {
   background-color: rgba(163, 29, 95, 0.5);
   color: rgba(190, 190, 190, 1);
@@ -33,10 +33,37 @@
   background-color: rgba(9, 9, 9, 0.5);
   padding: 0;
   width: 300px;
+  height: 100%;
+  margin-right: 300px;
   position: fixed;
+  float: left;
+  overflow: auto;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+/*
+.sidebar {
+  margin: 0;
+  z-index:0 !important;
+  background-color: rgba(9, 9, 9, 0.5);
+  padding: 0;
+  width: 300px;
+  height: 100%;
+  margin-right: 300px;
+  position: fixed;
+  float: left;
+  overflow: auto;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}*/
+
+/*
+.content {
+  margin-left: 300px;
   height: 100%;
   overflow: auto;
 }
+*/
 
 .sidebar span {
    position: absolute;
@@ -51,9 +78,10 @@
   text-decoration: none;
 }
 
-div.content {
+.content {
   margin-left: 300px;
   height: 100%;
+  overflow: auto;
 }
 
 .Content-Header {
@@ -68,7 +96,6 @@ div.content {
 .Content-Sub {
   text-align: center;
   font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  font-size: 2vw;
   font-style: italic;
   color: rgba(190, 190, 190, 1);
 }
@@ -82,6 +109,19 @@ div.content {
   color: rgba(190, 190, 190, 1);
 }
 
+.SideBar-Sub {
+  text-align: center;
+  font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-size: 18px;
+  transition: opacity 4s;
+  opacity: 1;
+  color: rgba(190, 190, 190, 1);
+}
+
+.gray {
+  background-color: gray;
+}
+
 .menu-icon {
   width: 50px !important;
   height : 50px !important;
@@ -89,9 +129,20 @@ div.content {
   transition: all 0.4s ease;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+
+}
+
+.menu-icon {
+  width: 50px !important;
+  height : 50px !important;
+  overflow: auto;
+  transition: all 0.4s ease;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
 }
 .menu-icon:hover {
-  transform: scale(.9);
+  /*transform: scale(.9);*/
   opacity: 0.5;
 }
 
@@ -123,27 +174,85 @@ div.content {
 }
 
 .slide-in {
-  animation: entry ease 2s;
-  -webkit-animation: entry ease 2s;
-  -moz-animation: entry ease 2s;
-  -o-animation: entry ease 2s;
-  -ms-animation: entry ease 2s;
+  animation: entry ease 0.4s;
+  -webkit-animation: entry ease 0.4s;
+  -moz-animation: entry ease 0.4s;
+  -o-animation: entry ease 0.4s;
+  -ms-animation: entry ease 0.4s;
 }
+
+.slide-in-desk {
+  animation: entryDesk ease 0.4s;
+  -webkit-animation: entryDesk ease 0.4s;
+  -moz-animation: entryDesk ease 0.4s;
+  -o-animation: entryDesk ease 0.4s;
+  -ms-animation: entryDesk ease 0.4s;
+}
+
+
+/*note that 368px is the with of the sidebar with 4 buttons
+and must be adjusted if more or less buttons are added. if cosntants existed in css this would be easier*/
+.slide-out {
+  animation: exit ease 0.4s;
+  -webkit-animation: exit ease 0.4s;
+  -moz-animation: exit ease 0.4s;
+  -o-animation: exit ease 0.4s;
+  -ms-animation: exit ease 0.4s;
+  margin-top : -368px !important;
+}
+
 @keyframes entry {
-  from {
-     bottom: 368px;
-   }
-   to {
-    bottom: 0px;;
-   }
+from {
+   margin-top: -368px;
+ }
+ to {
+   margin-top: 0%;
+ }
 }
 
 @-webkit-keyframes entry {
   from {
-     bottom: 368px;
+     margin-top: -368px;
    }
    to {
-    bottom: 0px ;
+     margin-top: 0%;
+   }
+}
+
+@keyframes entryDesk {
+from {
+   margin-right: 0;
+ }
+ to {
+   margin-right: 300px;
+ }
+}
+
+@-webkit-keyframes entryDesk {
+  from {
+     margin-right: 0;
+   }
+   to {
+     margin-right: 300px;
+   }
+}
+
+@keyframes exit {
+from {
+  margin-top: 0%;
+
+ }
+ to {
+   margin-top: -368px;
+ }
+}
+
+@-webkit-keyframes exit {
+  from {
+    margin-top: 0%;
+   }
+   to {
+     margin-top: -368px;
    }
 }
 
@@ -153,14 +262,11 @@ div.content {
     width: 100%;
     height: auto;
     position: relative;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-
   }
   .sidebar span {
      bottom: 0;
      left: 1;
   }
 
-  div.content {position: relative; margin-left: 0 !important; width: 100%;}
+ .content {position: relative; margin-left: 0 !important; width: 100%;}
 }

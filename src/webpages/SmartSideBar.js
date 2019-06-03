@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 import './styles/ExplorePage.css';
-import ExploreButton from './ExploreButton.js';
-import ContactContent from './ContactContent';
 import SideBar from './SideBar';
 import menu from './resources/menu-icon.png';
 
@@ -15,7 +13,8 @@ class SmartSideBar extends Component {
     super(props);
     this.state = {
       mobile : false,
-      showSideBar : true
+      showSideBar : true,
+      unmountingMobile : false
     }
   }
 
@@ -24,7 +23,7 @@ class SmartSideBar extends Component {
       if (this.state.mobile) { // not already desktop
         this.setState({
           mobile : false,
-          showSideBar: true}
+          showSideBar: true,}
         );
       }
     } else { //going to mobile mode
@@ -32,13 +31,24 @@ class SmartSideBar extends Component {
         this.setState({
           windowWidth: window.innerWidth,
           mobile: true,
-          showSideBar: false
+          showSideBar: false,
+          unmountingMobile : false
         });
       }
     }
   }
 
-  handleClick = () => {
+  handleClickMobile = () => {
+    if (this.state.showSideBar) {
+      this.setState({unmountingMobile : true});
+    }
+    this.setState({showSideBar : !this.state.showSideBar});
+  }
+
+  handleClickDesktop = () => {
+    if (this.state.showSideBar) {
+      this.setState({unmountingMobile : true});
+    }
     this.setState({showSideBar : !this.state.showSideBar});
   }
 
@@ -57,8 +67,10 @@ class SmartSideBar extends Component {
           {
             this.state.mobile // in mobile mode
             ? this.state.showSideBar
-              ? <SideBar />   //<SideBar  entry = {true} />
-              :  null // <SideBar exit true = {false} />
+              ? <SideBar  entry = {true} />
+              : this.state.unmountingMobile
+                ? <SideBar exit = {true} />
+                : null
 
             : <SideBar />
 
@@ -66,8 +78,12 @@ class SmartSideBar extends Component {
           {
             this.state.mobile
             ?
-            <div className = "menu-icon" onClick= {this.handleClick}>
-            <img src={menu} width="100%" height="100%"/>
+            <div className = "content menu-icon gray" >
+            <img src={menu}
+            alt= "Menu Icon"
+            onClick= {this.handleClickMobile}
+            width="50px"
+            height="50px"/>
             </div>
             :
             null

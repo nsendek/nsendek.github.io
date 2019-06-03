@@ -1,5 +1,4 @@
 import React, { Component} from 'react';
-import './styles/ExplorePage.css';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 
@@ -19,7 +18,7 @@ class ExploreButton extends Component {
   render() {
     return (
         <div>
-          <button  className = "Explore-button" onClick={this.handleClick}>
+          <button  className = {this.props.className} onClick={this.handleClick}>
              {this.props.name}
           </button>
         </div>

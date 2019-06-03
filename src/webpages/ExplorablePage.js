@@ -1,7 +1,6 @@
 import React, { Component} from 'react';
 import SmartSideBar from './SmartSideBar';
 import './styles/ExplorePage.css';
-import ContactContent from './ContactContent';
 import ResumeContent from './ResumeContent';
 import AboutMeContent from './AboutMeContent';
 import { connect } from 'react-redux';
@@ -33,9 +32,7 @@ class ExplorePage extends Component {
     return (
       <div className = "explore page">
         <SmartSideBar/>
-        <div className = "content" align = "center" height="100%">
         {this.renderContent()}
-        </div>
       </div>
     );
   }

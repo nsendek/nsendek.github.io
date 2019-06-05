@@ -1,7 +1,6 @@
 import {
   CHANGE_TAB,
 } from '../actions';
-import { combineReducers } from 'redux';
 import {initialState} from './initialState';
 
 

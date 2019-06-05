@@ -1,0 +1,267 @@
+.sidebar {
+  margin: 0;
+  z-index:0 !important;
+  background-color: rgba(0, 0, 0, 1);
+  padding: 0;
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  float: left;
+  overflow: auto;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.sidebar span {
+   position: absolute;
+   padding: 5px 10px;
+   bottom: 0;
+   left: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar-header {
+  text-align: center;
+  font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-size: 36px;
+  transition: opacity 4s;
+  opacity: 1;
+  color: rgba(190, 190, 190, 1);
+}
+
+.sidebar-sub {
+  text-align: center;
+  font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-size: 18px;
+  transition: opacity 4s;
+  opacity: 1;
+  color: rgba(190, 190, 190, 1);
+}
+
+.gray {
+  background-color: gray;
+}
+
+.icon {
+  width: 50px !important;
+  height : 50px !important;
+  overflow: auto;
+  cursor: pointer ;
+  transition: all 0.4s ease;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.icon:hover {
+  /*transform: scale(.9);*/
+  opacity: 0.5;
+
+}
+
+/*margin-left: 250px;*/
+.mobile-menu-icon {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 100%;
+  float: left;
+  z-index: 1;
+  overflow: auto;
+
+}
+
+.desktop-menu-icon {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  margin-left: 0px;
+  position: fixed;
+  height: 100%;
+  float: left;
+  overflow: auto;
+}
+
+.menu-icon-slide-in {
+  animation: menu-icon-entry ease 0.4s;
+  -webkit-animation: menu-icon-entry ease 0.4s;
+  -moz-animation: menu-icon-entry ease 0.4s;
+  -o-animation: menu-icon-entry ease 0.4s;
+  -ms-animation: menu-icon-entry ease 0.4s;
+  margin-left : 300px !important;
+}
+
+.menu-icon-slide-out {
+  animation: menu-icon-exit ease 0.4s;
+  -webkit-animation: menu-icon-exit ease 0.4s;
+  -moz-animation: menu-icon-exit ease 0.4s;
+  -o-animation: menu-icon-exit ease 0.4s;
+  -ms-animation: menu-icon-exit ease 0.4s;
+  margin-left : 0px !important;
+
+}
+
+@keyframes menu-icon-entry {
+  from {
+     margin-left: 0px;
+   }
+   to {
+     margin-left: 300px;
+   }
+}
+
+@-webkit-keyframes menu-icon-entry {
+  from {
+     margin-left: 0px;
+   }
+   to {
+     margin-left: 300px;
+   }
+}
+
+@keyframes menu-icon-exit {
+  from {
+     margin-left: 300px;
+   }
+   to {
+     margin-left: 0px;
+   }
+}
+
+@-webkit-keyframes menu-icon-exit {
+  from {
+     margin-left: 300px;
+   }
+   to {
+     margin-left: 0px;
+   }
+}
+
+
+.slide-in {
+  animation: entry ease 0.4s;
+  -webkit-animation: entry ease 0.4s;
+  -moz-animation: entry ease 0.4s;
+  -o-animation: entry ease 0.4s;
+  -ms-animation: entry ease 0.4s;
+}
+/*note that 368px is the with of the sidebar with 4 buttons
+and must be adjusted if more or less buttons are added. if cosntants existed in css this would be easier*/
+.slide-out {
+  animation: exit ease 0.4s;
+  -webkit-animation: exit ease 0.4s;
+  -moz-animation: exit ease 0.4s;
+  -o-animation: exit ease 0.4s;
+  -ms-animation: exit ease 0.4s;
+  margin-top : -376px !important;
+}
+
+@keyframes entry {
+from {
+   margin-top: -376px;
+ }
+ to {
+   margin-top: 0%;
+ }
+}
+
+@-webkit-keyframes entry {
+  from {
+     margin-top: -376px;
+   }
+   to {
+     margin-top: 0%;
+   }
+}
+
+@keyframes exit {
+from {
+  margin-top: 0%;
+
+ }
+ to {
+   margin-top: -376px;
+ }
+}
+
+@-webkit-keyframes exit {
+  from {
+    margin-top: 0%;
+   }
+   to {
+     margin-top: -376px;
+   }
+}
+
+
+.slide-out-desk {
+  animation: exitDesk ease 0.4s;
+  -webkit-animation: exitDesk ease 0.4s;
+  -moz-animation: exitDesk ease 0.4s;
+  -o-animation: exitDesk ease 0.4s;
+  -ms-animation: exitDesk ease 0.4s;
+    margin-left : -300px !important;
+}
+
+.slide-in-desk {
+  animation: entryDesk ease 0.4s;
+  -webkit-animation: entryDesk ease 0.4s;
+  -moz-animation: entryDesk ease 0.4s;
+  -o-animation: entryDesk ease 0.4s;
+  -ms-animation: entryDesk ease 0.4s;
+}
+
+
+@keyframes exitDesk {
+from {
+   margin-left: 0px;
+ }
+ to {
+   margin-left: -300px;
+ }
+}
+
+@-webkit-keyframes exitDesk {
+  from {
+     margin-left:0px;
+   }
+   to {
+     margin-left: -300px;
+   }
+}
+
+@keyframes entryDesk {
+  from {
+     margin-left: -300px;
+   }
+   to {
+     margin-left: 0px;
+   }
+}
+
+@-webkit-keyframes entryDesk {
+  from {
+     margin-left: -300px;
+   }
+   to {
+     margin-left: 0px;
+   }
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar span {
+     bottom: 0;
+     left: 1;
+  }
+
+}

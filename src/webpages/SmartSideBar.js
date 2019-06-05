@@ -2,91 +2,55 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 import './styles/ExplorePage.css';
+import './styles/SideBar.css';
 import SideBar from './SideBar';
 import menu from './resources/menu-icon.png';
 
-const MOBILE_SCREEN_WIDTH = 700;
-
 class SmartSideBar extends Component {
   // responsive SideBar that changes and expands (animated) based on screen size.
-  constructor(props) {
-    super(props);
-    this.state = {
-      mobile : false,
-      showSideBar : true,
-      unmountingMobile : false
-    }
-  }
-
-  updateDimensions = () => {
-    if (window.innerWidth > MOBILE_SCREEN_WIDTH) { //going to desktop mode
-      if (this.state.mobile) { // not already desktop
-        this.setState({
-          mobile : false,
-          showSideBar: true,}
-        );
-      }
-    } else { //going to mobile mode
-      if (!this.state.mobile) { //not already mobile
-        this.setState({
-          windowWidth: window.innerWidth,
-          mobile: true,
-          showSideBar: false,
-          unmountingMobile : false
-        });
-      }
-    }
-  }
-
-  handleClickMobile = () => {
-    if (this.state.showSideBar) {
-      this.setState({unmountingMobile : true});
-    }
-    this.setState({showSideBar : !this.state.showSideBar});
-  }
-
-  handleClickDesktop = () => {
-    if (this.state.showSideBar) {
-      this.setState({unmountingMobile : true});
-    }
-    this.setState({showSideBar : !this.state.showSideBar});
-  }
-
-  componentDidMount() {
-    this.updateDimensions();
-    window.addEventListener("resize", this.updateDimensions);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions);
-  }
+  // information passed down from the explorablePage parent is used
 
   render() {
+
+    var menuClassName = "icon ";
+    if (this.props.state.mobile) { //mobile menu icon styles
+      menuClassName += "mobile-menu-icon ";
+    } else { //desktop menu icon styles
+      menuClassName += "desktop-menu-icon ";
+      if (this.props.state.showSideBar) {
+        menuClassName += "menu-icon-slide-in ";
+      } else if (this.props.state.unmounting) {
+        menuClassName += "menu-icon-slide-out ";
+      }
+    }
+
     return (
       <div>
           {
-            this.state.mobile // in mobile mode
-            ? this.state.showSideBar
+            this.props.state.mobile // in mobile mode
+            ? this.props.state.showSideBar
               ? <SideBar  entry = {true} />
-              : this.state.unmountingMobile
+              : this.props.state.unmounting
                 ? <SideBar exit = {true} />
                 : null
 
-            : <SideBar />
+            : this.props.state.showSideBar
+              ? <SideBar entryDesk = {true}/>
+              : this.props.state.unmounting
+                ? <SideBar exitDesk = {true} />
+                : null
 
           }
           {
-            this.state.mobile
-            ?
-            <div className = "content menu-icon gray" >
+
+            <div className = {menuClassName} >
             <img src={menu}
             alt= "Menu Icon"
-            onClick= {this.handleClickMobile}
+            onClick= {this.props.handleClick}
             width="50px"
             height="50px"/>
             </div>
-            :
-            null
+
           }
       </div>
 

@@ -2,7 +2,7 @@
   background-image: url("../resources/test2.png");
 }
 
-.Explore-button {
+.explore-button {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -14,75 +14,39 @@
   margin: 5px 5px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-  cursor: default;
+  cursor: pointer;
   font-family: "Courier New", Courier, monospace;
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
   color: rgba(190, 190, 190, 1);
   border: 2px solid rgba(190, 190, 190, 1);
 }
 
-.Explore-button:hover {
+.explore-button:hover {
   background-color: rgba(163, 29, 95, 0.5);
   color: rgba(190, 190, 190, 1);
-  transform: scale(1.2);
-}
-
-.sidebar {
-  margin: 0;
-  z-index:0 !important;
-  background-color: rgba(9, 9, 9, 0.5);
-  padding: 0;
-  width: 300px;
-  height: 100%;
-  margin-right: 300px;
-  position: fixed;
-  float: left;
-  overflow: auto;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-}
-/*
-.sidebar {
-  margin: 0;
-  z-index:0 !important;
-  background-color: rgba(9, 9, 9, 0.5);
-  padding: 0;
-  width: 300px;
-  height: 100%;
-  margin-right: 300px;
-  position: fixed;
-  float: left;
-  overflow: auto;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-}*/
-
-/*
-.content {
-  margin-left: 300px;
-  height: 100%;
-  overflow: auto;
-}
-*/
-
-.sidebar span {
-   position: absolute;
-   padding: 5px 10px;
-   bottom: 0;
-   left: 0;
-}
-
-.sidebar a {
-  display: block;
-  padding: 16px;
-  text-decoration: none;
+  transform: scale(1.06);
 }
 
 .content {
-  margin-left: 300px;
+  margin-left: 0px;
+  padding-left: 5%;
+  padding-right: 5%;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  /*background-color: rgba(200, 200, 200, 0.8);
+  */
+  background-clip: content-box;
+  border-left: solid #5B6DCD 5px;
+
 }
+.file-content {
+  margin-left: 0px;
+  height: 100%;
+  overflow-y: auto;
+  /*background-color: rgba(200, 200, 200, 0.8);
+  */
+}
+
 
 .Content-Header {
   text-align: center;
@@ -100,173 +64,74 @@
   color: rgba(190, 190, 190, 1);
 }
 
-.SideBar-Header {
-  text-align: center;
-  font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  font-size: 36px;
-  transition: opacity 4s;
-  opacity: 1;
-  color: rgba(190, 190, 190, 1);
+.slide-in-content {
+  animation: entryContent ease 0.4s;
+  -webkit-animation: entryContent ease 0.4s;
+  -moz-animation: entryContent ease 0.4s;
+  -o-animation: entryContent ease 0.4s;
+  -ms-animation: entryContent ease 0.4s;
+  margin-left : 300px !important;
 }
 
-.SideBar-Sub {
-  text-align: center;
-  font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  font-size: 18px;
-  transition: opacity 4s;
-  opacity: 1;
-  color: rgba(190, 190, 190, 1);
+.slide-out-content {
+  animation: exitContent ease 0.4s;
+  -webkit-animation: exitContent ease 0.4s;
+  -moz-animation: exitContent ease 0.4s;
+  -o-animation: exitContent ease 0.4s;
+  -ms-animation: exitContent ease 0.4s;
+  margin-left : 0px !important;
 }
 
-.gray {
-  background-color: gray;
-}
-
-.menu-icon {
-  width: 50px !important;
-  height : 50px !important;
-  overflow: auto;
-  transition: all 0.4s ease;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-
-}
-
-.menu-icon {
-  width: 50px !important;
-  height : 50px !important;
-  overflow: auto;
-  transition: all 0.4s ease;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-
-}
-.menu-icon:hover {
-  /*transform: scale(.9);*/
-  opacity: 0.5;
-}
-
-.icon-bar {
-  width: 150px;
-  overflow: auto;
-  transition: all 0.4s ease;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  bottom:0;
-}
-
-.icon-bar a {
-  float: left;
-  align: center;
-  width: 20%;
-  padding: 2px 2px;
-
-  color: white;
-  cursor: default !important;
-  transition: all 0.4s ease;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-}
-.icon-bar a:hover {
-  transform: scale(.9);
-  opacity: 0.5;
-
-}
-
-.slide-in {
-  animation: entry ease 0.4s;
-  -webkit-animation: entry ease 0.4s;
-  -moz-animation: entry ease 0.4s;
-  -o-animation: entry ease 0.4s;
-  -ms-animation: entry ease 0.4s;
-}
-
-.slide-in-desk {
-  animation: entryDesk ease 0.4s;
-  -webkit-animation: entryDesk ease 0.4s;
-  -moz-animation: entryDesk ease 0.4s;
-  -o-animation: entryDesk ease 0.4s;
-  -ms-animation: entryDesk ease 0.4s;
-}
-
-
-/*note that 368px is the with of the sidebar with 4 buttons
-and must be adjusted if more or less buttons are added. if cosntants existed in css this would be easier*/
-.slide-out {
-  animation: exit ease 0.4s;
-  -webkit-animation: exit ease 0.4s;
-  -moz-animation: exit ease 0.4s;
-  -o-animation: exit ease 0.4s;
-  -ms-animation: exit ease 0.4s;
-  margin-top : -368px !important;
-}
-
-@keyframes entry {
-from {
-   margin-top: -368px;
- }
- to {
-   margin-top: 0%;
- }
-}
-
-@-webkit-keyframes entry {
+@keyframes exitContent {
   from {
-     margin-top: -368px;
+     margin-left: 300px;
    }
    to {
-     margin-top: 0%;
+     margin-left: 0px;
    }
 }
 
-@keyframes entryDesk {
-from {
-   margin-right: 0;
- }
- to {
-   margin-right: 300px;
- }
-}
-
-@-webkit-keyframes entryDesk {
+@-webkit-keyframes exitContent {
   from {
-     margin-right: 0;
+     margin-left: 300px;
    }
    to {
-     margin-right: 300px;
+     margin-left: 0px;
    }
 }
 
-@keyframes exit {
-from {
-  margin-top: 0%;
-
- }
- to {
-   margin-top: -368px;
- }
-}
-
-@-webkit-keyframes exit {
+@keyframes entryContent {
   from {
-    margin-top: 0%;
+     margin-left: 0px;
    }
    to {
-     margin-top: -368px;
+     margin-left: 300px;
    }
 }
 
+@-webkit-keyframes entryContent {
+  from {
+     margin-left: 0px;
+   }
+   to {
+     margin-left: 300px;
+   }
+}
+
+
+@media screen and (max-width: 900px) {
+ .content {
+
+   padding-left: 2%;
+   padding-right: 2%;
+
+}
+}
 
 @media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar span {
-     bottom: 0;
-     left: 1;
-  }
-
- .content {position: relative; margin-left: 0 !important; width: 100%;}
+ .content {
+   position: relative;
+   padding-left: 0px;
+   padding-right: 0px;
+   width: 100%;}
 }

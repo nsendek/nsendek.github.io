@@ -5,13 +5,32 @@ class AboutMeContent extends Component {
 
   render() {
     return (
-      <div className = "content" height="100%">
-        <h1 className="Content-Header">
-          About Me
-        </h1>
+      <div height="100%">
+        <h2 className="Content-Header">
+          About Me jkn;ljkn;
+        </h2>
+        <h2 className="Content-Sub">The FitnessGram™ Pacer Test</h2>
+<p className="Content-Sub">is a multistage aerobic capacity test that progressively gets more difficult as it continues</p>
+<p  className="Content-Sub">The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound.</p>
+<h3 className="Content-Sub">[ding]  </h3>
         <p className="Content-Sub">
-          About Me aboufnd;admsc ;a ;as kja ;dsclam sd;alj a;d, m ;ljs a;dl  sldkfmv;lckd lak 'als ka;l a'lfm 'ask d'alkd la ;dljk ;lm ;lkf s;alfs;ljka;l jk;lk ;lkd
+        Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start
         </p>
+        <h2 className="Content-Sub">The FitnessGram™ Pacer Test</h2>
+<p className="Content-Sub">is a multistage aerobic capacity test that progressively gets more difficult as it continues</p>
+<p  className="Content-Sub">The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound.</p>
+<h3 className="Content-Sub">[ding]  </h3>
+        <p className="Content-Sub">
+        Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start
+        </p>
+        <h2 className="Content-Sub">The FitnessGram™ Pacer Test</h2>
+<p className="Content-Sub">is a multistage aerobic capacity test that progressively gets more difficult as it continues</p>
+<p  className="Content-Sub">The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound.</p>
+<h3 className="Content-Sub">[ding]  </h3>
+        <p className="Content-Sub">
+        Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start
+        </p>
+
       </div>
 
     );

@@ -10,9 +10,8 @@ componentWillMount(){
 }
 
   render() {
-    var tab = this.props.tab;
     return (
-      this.props.tab === "HOMEPAGE"
+      this.props.tab === "HOME"
       ?   <HomePage/>
       :   <ExplorePage/>
     );

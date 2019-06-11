@@ -7,7 +7,7 @@ class ContentContainer extends Component {
     var className = "content ";
 
 
-    if (!this.props.state.mobile) { 
+    if (!this.props.state.mobile) {
        //desktop menu icon styles
       if (this.props.state.showSideBar) {
         className += "slide-in-content ";

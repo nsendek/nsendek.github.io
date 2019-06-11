@@ -6,7 +6,7 @@ class AboutMeContent extends Component {
   render() {
     return (
       <div height="100%">
-        <h2 className="Content-Header">
+        <h2 className="content-header">
           About Me jkn;ljkn;
         </h2>
         <h2 className="Content-Sub">The FitnessGram™ Pacer Test</h2>

@@ -1,6 +1,6 @@
 .sidebar {
   margin: 0;
-  z-index:0 !important;
+  z-index:1;
   background-color: rgba(0, 0, 0, 1);
   padding: 0;
   width: 300px;
@@ -10,6 +10,7 @@
   overflow: auto;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+
 }
 
 .sidebar span {
@@ -21,6 +22,7 @@
 
 .sidebar a {
   display: block;
+  color: white;
   padding: 16px;
   text-decoration: none;
 }
@@ -48,40 +50,34 @@
 }
 
 .icon {
+  margin: 0;
+  padding: 0;
   width: 50px !important;
   height : 50px !important;
   overflow: auto;
-  cursor: pointer ;
+  cursor: pointer;
+  z-index: 1;
   transition: all 0.4s ease;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 
 .icon:hover {
-  /*transform: scale(.9);*/
+
   opacity: 0.5;
 
 }
 
 /*margin-left: 250px;*/
 .mobile-menu-icon {
-  margin: 0;
-  padding: 0;
-  width: 50px;
-  height: 100%;
   float: left;
-  z-index: 1;
+
   overflow: auto;
 
 }
 
 .desktop-menu-icon {
-  margin: 0;
-  padding: 0;
-  width: 50px;
-  margin-left: 0px;
   position: fixed;
-  height: 100%;
   float: left;
   overflow: auto;
 }
@@ -148,6 +144,7 @@
   -moz-animation: entry ease 0.4s;
   -o-animation: entry ease 0.4s;
   -ms-animation: entry ease 0.4s;
+   margin-top: 0% !important;
 }
 /*note that 368px is the with of the sidebar with 4 buttons
 and must be adjusted if more or less buttons are added. if cosntants existed in css this would be easier*/
@@ -213,6 +210,7 @@ from {
   -moz-animation: entryDesk ease 0.4s;
   -o-animation: entryDesk ease 0.4s;
   -ms-animation: entryDesk ease 0.4s;
+  margin-left : 0px !important;
 }
 
 

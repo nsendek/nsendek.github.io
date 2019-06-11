@@ -46,7 +46,7 @@ class SmartSideBar extends Component {
             <div className = {menuClassName} >
             <img src={menu}
             alt= "Menu Icon"
-            onClick= {this.props.handleClick}
+            onClick= {this.props.menuClick}
             width="50px"
             height="50px"/>
             </div>

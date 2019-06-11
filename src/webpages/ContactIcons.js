@@ -5,6 +5,7 @@ import git from './resources/logos/github.png';
 import link from './resources/logos/linkedin.png'
 import facebook from './resources/logos/facebook.png';
 import insta from './resources/logos/instagram.png';
+import at from './resources/logos/@.png';
 
 class ContactContent extends Component {
 
@@ -26,6 +27,10 @@ class ContactContent extends Component {
 
           <a  rel="noopener noreferrer" href="https://www.instagram.com/nikodmas/" target="_blank">
             <img src={insta} alt= "instagram profile" width="100%" height="100%"/>
+          </a>
+
+          <a href="mailto:nsendek@mit.edu" >
+            <img src={at} alt= "my email" width="100%" height="100%"/>
           </a>
 
       </div>

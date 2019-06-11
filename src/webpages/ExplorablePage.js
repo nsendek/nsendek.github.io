@@ -1,14 +1,11 @@
 import React, { Component} from 'react';
 import SmartSideBar from './SmartSideBar';
 import './styles/ExplorePage.css';
-import ResumeContent from './ResumeContent';
-import AboutMeContent from './AboutMeContent';
 import ContentContainer from './ContentContainer';
-import { connect } from 'react-redux';
 
 const MOBILE_SCREEN_WIDTH = 700;
 
-class ExplorePage extends Component {
+class ExplorablePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -56,49 +53,22 @@ class ExplorePage extends Component {
     window.removeEventListener("resize", this.updateDimensions);
   }
 
-  renderContent = () => {
-    switch (this.props.tab) {
-      case "RESUME":
-         return (
-           <ContentContainer
-           state = {this.state}
-           content = {<ResumeContent />}
-           />
-        );
-      case "ABOUT ME":
-        return (
-          <ContentContainer
-          state = {this.state}
-          content = {<AboutMeContent />}
-          />
-        );
-      default: return (
-        <ContentContainer
-        state = {this.state}
-        content = {null}
-        />
-      )
 
-    }
-  }
 
   render() {
     return (
       <div className = "explore page">
         <SmartSideBar
         state = {this.state}
-        handleClick = {this.handleClick}
+        menuClick = {this.handleClick}
         />
-        {this.renderContent()}
+        <ContentContainer
+        state = {this.state}
+        content = {this.props.content}
+        />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    tab: state.tab
-  }
-}
-
-export default connect(mapStateToProps)(ExplorePage);
+export default ExplorablePage;

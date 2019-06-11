@@ -1,0 +1,71 @@
+
+.MainContainer {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.ContentContainer {
+  position: relative;
+  display: block;
+  background-color: white;
+  z-index: 1;
+}
+
+.Content {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 75px 0;
+}
+
+.ParallaxContainer1 {
+  display: flex;
+  flex: 1 0 auto;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(-1px) translateY(-275px) scale(2);
+  color: white;
+
+}
+
+
+.ParallaxContainer2 {
+  display: flex;
+  flex: 1 0 auto;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transform:translateZ(-4px) scale(5);
+  color: white;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+img {
+  color: black;
+}
+
+.ParallaxContainer3 {
+  display: flex;
+  flex: 1 0 auto;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transform:translateZ(-3px) scale(4);
+  color: white;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

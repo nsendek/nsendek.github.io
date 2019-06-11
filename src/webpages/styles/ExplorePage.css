@@ -1,5 +1,5 @@
 .explore{
-  background-image: url("../resources/test2.png");
+  /*background-image: url("../resources/test2.png"); */
 }
 
 .explore-button {
@@ -28,15 +28,15 @@
 }
 
 .content {
+
   margin-left: 0px;
-  padding-left: 5%;
-  padding-right: 5%;
+
   height: 100%;
   overflow-y: auto;
   /*background-color: rgba(200, 200, 200, 0.8);
   */
   background-clip: content-box;
-  border-left: solid #5B6DCD 5px;
+  border-left: solid rgba(190, 190, 190, 1) 2px;
 
 }
 .file-content {
@@ -48,7 +48,7 @@
 }
 
 
-.Content-Header {
+.content-header {
   text-align: center;
   font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   font-size: 36px;
@@ -121,15 +121,14 @@
 
 @media screen and (max-width: 900px) {
  .content {
-
    padding-left: 2%;
    padding-right: 2%;
-
-}
+ }
 }
 
 @media screen and (max-width: 700px) {
  .content {
+   border-left: none;
    position: relative;
    padding-left: 0px;
    padding-right: 0px;

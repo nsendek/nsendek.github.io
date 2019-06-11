@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import './styles/HomePage.css';
+import './styles/parallax.css';
 import ExploreButton from './ExploreButton.js'
 import ContactIcons from './ContactIcons';
 
@@ -11,7 +12,7 @@ class HomePage extends Component {
       <h1 className="homepage-header fade-in">
           Nikodimos Z. Sendek
         <p className="homepage-sub">
-          Artist - Programmer - Creative
+          Artist • Programmer • Creative
         </p>
       </h1>
       <ExploreButton className = "fade-in homepage-button"

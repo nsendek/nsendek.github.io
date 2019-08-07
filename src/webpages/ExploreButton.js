@@ -14,7 +14,7 @@ class ExploreButton extends Component {
   handleClick = () => {
   this.props.changeTab(this.props.name);
   }
-//
+  
   render() {
     return (
         <div>

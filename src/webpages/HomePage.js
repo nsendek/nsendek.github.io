@@ -22,7 +22,7 @@ class HomePage extends Component {
        name = "PORTFOLIO" tD= {3000}/>
 
       <ExploreButton className = "fade-in homepage-button"
-      name = "RESUME" tD= {4000}/>
+      name = "CV" tD= {4000}/>
 
       <span> <ContactIcons /> </span>
     </div>

@@ -39,10 +39,8 @@ class SmartSideBar extends Component {
               : this.props.state.unmounting
                 ? <SideBar exitDesk = {true} />
                 : null
-
           }
           {
-
             <div className = {menuClassName} >
             <img src={menu}
             alt= "Menu Icon"
@@ -50,7 +48,6 @@ class SmartSideBar extends Component {
             width="50px"
             height="50px"/>
             </div>
-
           }
       </div>
 

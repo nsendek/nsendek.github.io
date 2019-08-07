@@ -9,22 +9,19 @@ import ContactIcons from './ContactIcons';
 class SideBar extends Component {
 
   render() {
-     var entry = "";
-     var entryDesk = "";
-     var exit = "";
-     var exitDesk = "";
+     var slideClass = "";
      if (this.props.entry) {
-       entry = "slide-in";
+       slideClass += "slide-in ";
      } else if (this.props.exit) {
-       exit = "slide-out";
+       slideClass += "slide-out ";
      } else if (this.props.entryDesk) {
-       entryDesk = "slide-in-desk"
+       slideClass += "slide-in-desk "
      } else if (this.props.exitDesk) {
-       exitDesk = "slide-out-desk"
+       slideClass += "slide-out-desk "
      }
 
     return (
-      <div className={`sidebar ${entry} ${exit} ${entryDesk} ${exitDesk}`}  align = "center">
+      <div className={`sidebar ${slideClass}`}  align = "center">
         <a> <ExploreButton className = "explore-button" name= "HOME" /> </a>
 
         <a> <ExploreButton className = "explore-button" name= "ABOUT ME" /> </a>

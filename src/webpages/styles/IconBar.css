@@ -1,5 +1,5 @@
 .icon-bar {
-  width: 200px;
+  width: 160px;
   overflow: auto;
   transition: all 0.4s ease;
   -webkit-transition-duration: 0.4s;
@@ -10,7 +10,7 @@
 .icon-bar a {
   float: left;
   align: center;
-  width: 15%;
+  width: 20%;
   padding: 2px 2px;
 
   color: white;

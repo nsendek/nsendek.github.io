@@ -49,7 +49,7 @@ class SideBar extends Component {
              RESUME
           </button>
         </div>
-        <div className='ab'> <span> <ContactIcons /> </span> </div>
+        <div className='item'> <span> <ContactIcons /> </span> </div>
       </div>
     );
   }

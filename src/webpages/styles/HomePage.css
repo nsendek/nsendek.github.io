@@ -16,7 +16,7 @@
 
 .homepage-button {
   background-color: #4CAF50; /* Green */
-  border: none;
+  outline: none;
   color: white;
   width: 200px !important;
   padding: 12px 32px;
@@ -37,6 +37,9 @@
   background-color: rgba(163, 29, 95, 0.5);
   color: rgba(190, 190, 190, 1);
   transform: scale(1.2);
+}
+.homepage-button:active {
+  transform: scale(.9);
 }
 
 #container {

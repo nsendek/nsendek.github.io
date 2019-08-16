@@ -21,6 +21,7 @@ but move mobel stuff inside 700px area*/
    padding: 5px 10px;
    bottom: 0;
    left: 0;
+   outline: none;
 }
 
 .sidebar .item {
@@ -28,8 +29,9 @@ but move mobel stuff inside 700px area*/
   color: white;
   padding: 16px;
   text-decoration: none;
-}
+  outline: none;
 
+}
 .sidebar-header {
   text-align: center;
   font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;

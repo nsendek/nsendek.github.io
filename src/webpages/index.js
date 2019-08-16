@@ -28,12 +28,14 @@ renderContent = () => {
     case "RESUME":
        return (
          <ExplorablePage
+         title = "Resume"
          content = {<ResumeContent />}
          />
       );
     case "ABOUT ME":
       return (
         <ExplorablePage
+        title = "About Me"
         content = {<AboutMeContent />}
         />
       );
@@ -41,11 +43,12 @@ renderContent = () => {
     case "PORTFOLIO":
       return (
         <ExplorablePage
+        title = "Portfolio"
         content = {<PortfolioContent />}
         />
       );
     default: return (
-      <ExplorablePage content = {null} />
+      <ExplorablePage />
     )
 
   }

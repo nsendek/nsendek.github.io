@@ -1,3 +1,6 @@
+/*TODO: change all to common classes (remove mobile/desktop names)
+but move mobel stuff inside 700px area*/
+
 .sidebar {
   margin: 0;
   z-index:1;
@@ -63,45 +66,35 @@
 }
 
 .icon:hover {
-
   opacity: 0.5;
-
 }
 
 /*margin-left: 250px;*/
-.mobile-menu-icon {
-  float: left;
-
-  overflow: auto;
-
-}
-
-.desktop-menu-icon {
+.menu-icon {
   position: fixed;
   float: left;
   overflow: auto;
 }
 
-.menu-icon-slide-in {
-  animation: menu-icon-entry ease 0.4s;
-  -webkit-animation: menu-icon-entry ease 0.4s;
-  -moz-animation: menu-icon-entry ease 0.4s;
-  -o-animation: menu-icon-entry ease 0.4s;
-  -ms-animation: menu-icon-entry ease 0.4s;
+.desktop-slide-in {
+  animation: desktop-entry ease 0.4s;
+  -webkit-animation: desktop-entry ease 0.4s;
+  -moz-animation: desktop-entry ease 0.4s;
+  -o-animation: desktop-entry 0.4s;
+  -ms-animation: desktop-entry ease 0.4s;
   margin-left : 300px !important;
 }
 
-.menu-icon-slide-out {
-  animation: menu-icon-exit ease 0.4s;
-  -webkit-animation: menu-icon-exit ease 0.4s;
-  -moz-animation: menu-icon-exit ease 0.4s;
-  -o-animation: menu-icon-exit ease 0.4s;
-  -ms-animation: menu-icon-exit ease 0.4s;
+.desktop-slide-out {
+  animation: desktop-exit ease 0.4s;
+  -webkit-animation: desktop-exit ease 0.4s;
+  -moz-animation: desktop-exit ease 0.4s;
+  -o-animation: desktop-exit ease 0.4s;
+  -ms-animation: desktop-exit ease 0.4s;
   margin-left : 0px !important;
-
 }
 
-@keyframes menu-icon-entry {
+@keyframes desktop-entry {
   from {
      margin-left: 0px;
    }
@@ -110,7 +103,7 @@
    }
 }
 
-@-webkit-keyframes menu-icon-entry {
+@-webkit-keyframes desktop-entry {
   from {
      margin-left: 0px;
    }
@@ -119,7 +112,7 @@
    }
 }
 
-@keyframes menu-icon-exit {
+@keyframes desktop-exit {
   from {
      margin-left: 300px;
    }
@@ -128,7 +121,7 @@
    }
 }
 
-@-webkit-keyframes menu-icon-exit {
+@-webkit-keyframes desktop-exit {
   from {
      margin-left: 300px;
    }
@@ -137,6 +130,61 @@
    }
 }
 
+/*note that 368px is the with of the sidebar with 4 buttons
+and must be adjusted if more or less buttons are added. if cosntants existed in css this would be easier*/
+.mobile-slide-in {
+  animation: mobile-entry ease 0.4s;
+  -webkit-animation: mobile-entry ease 0.4s;
+  -moz-animation: mobile-entry ease 0.4s;
+  -o-animation: mobile-entry ease 0.4s;
+  -ms-animation: mobile-entry ease 0.4s;
+  margin-top: 376px !important;
+}
+
+.mobile-slide-out {
+  animation: mobile-exit ease 0.4s;
+  -webkit-animation: mobile-exit ease 0.4s;
+  -moz-animation: mobile-exit ease 0.4s;
+  -o-animation: mobile-exit ease 0.4s;
+  -ms-animation: mobile-exit ease 0.4s;
+  margin-top: 0% !important;
+}
+
+@keyframes mobile-entry {
+from {
+   margin-top: 0%;
+ }
+ to {
+   margin-top: 376px;
+ }
+}
+
+@-webkit-keyframes mobile-entry {
+from {
+   margin-top: 0%;
+ }
+ to {
+   margin-top: 376px;
+ }
+}
+
+@keyframes mobile-exit {
+from {
+   margin-top: 376px;
+ }
+ to {
+   margin-top: 0%;
+ }
+}
+
+@-webkit-keyframes mobile-exit {
+  from {
+     margin-top: 376px;
+   }
+   to {
+     margin-top: 0%;
+   }
+}
 
 .slide-in {
   animation: entry ease 0.4s;
@@ -146,8 +194,6 @@
   -ms-animation: entry ease 0.4s;
    margin-top: 0% !important;
 }
-/*note that 368px is the with of the sidebar with 4 buttons
-and must be adjusted if more or less buttons are added. if cosntants existed in css this would be easier*/
 .slide-out {
   animation: exit ease 0.4s;
   -webkit-animation: exit ease 0.4s;

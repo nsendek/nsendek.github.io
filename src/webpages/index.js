@@ -17,7 +17,7 @@ renderContent = () => {
     case "HOME":
       return (
         <HomePage/>
-      )
+      );
     case "RESUME":
        return (
          <ExplorablePage
@@ -39,7 +39,6 @@ renderContent = () => {
       );
     default: return (
       <ExplorablePage content = {null} />
-
     )
 
   }

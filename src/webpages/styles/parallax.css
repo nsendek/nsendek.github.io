@@ -1,4 +1,4 @@
-.MainContainer {
+.main-container {
   perspective: 1px;
   transform-style: preserve-3d;
   height: 100vh;
@@ -6,58 +6,35 @@
   overflow-y: scroll;
 }
 
-.ContentContainer {
-  position: relative;
+.parallax-content-header {
+  display: flex;
+  flex: 1 0 auto;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(-4px) scale(5);
+  color: white;
+  img {
+    position: absolute;
+  }
+}
+
+.parallax-content-container {
+  position: static;
   display: block;
-  background-color: gray;
   z-index: 1;
   clear:both;
-}
-
-.Content {
-  max-width: 750px;
+  max-width: 1000px;
   margin: 0 auto;
+  color: white;
   padding: 75px 0;
-}
-
-.ParallaxContainer1 {
-  display: flex;
-  flex: 1 0 auto;
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  transform: translateZ(-1px) translateY(-275px) scale(2);
-  color: white;
-
-}
-
-
-.ParallaxContainer2 {
-  display: flex;
-  flex: 1 0 auto;
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  transform:translateZ(-4px) scale(5);
-  color: white;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.ParallaxContainer2 img {
-  color: black;
-  position: absolute;
-  z-index: -1;
 }
 
 .background-parallax {
   display: flex;
+  position: absolute;
   flex: 1 0 auto;
   z-index: 1;
   height: 100vh;
@@ -65,29 +42,33 @@
   align-items: center;
   color: white;
   float:left;
+  img {
+    overflow: visible;
+  }
+}
+
+.gradient {
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 .pic1 {
-  transform:translateZ(-1px) translateX(-500px) translateY(-200px) scale(5);
+  transform: translateZ(-1px) scale(2);
 }
 .pic2 {
-  transform:translateZ(-2px)  translateY(-200px) scale(6);
+  transform: translateZ(-2px) scale(4);
 }
 .pic3 {
-  transform:translateZ(-3px) translateX(-1500px) translateY(-200px) scale(7);
+  transform: translateZ(-3px) scale(9);
 }
 .pic4 {
-  transform:translateZ(-4px) translateX(1500px) translateY(-200px) scale(8);
+  transform: translateZ(-2px) scale(4);
 }
 .pic5 {
-
-  transform:translateZ(-3px) translateX(3500px) translateY(-500px) scale(8);
+  transform: translateZ(-1px) scale(2);
 }
 .pic6 {
-  transform:translateZ(-5px) scale(7);
+  transform:translateZ(-4px) scale(10);
 }
-
-
 
 *,
 :after,
@@ -113,8 +94,8 @@
   background-size: 14px auto;
   border-radius: 50%;
   z-index: 2;
-  -webkit-animation: bounce 2s infinite 2s;
-  animation: bounce 2s infinite 2s;
+  -webkit-animation: bounce 1s infinite 2s;
+  animation: bounce 1s infinite 2s;
   -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
   transform: scale(1);
@@ -131,6 +112,16 @@
     content: "";
     border: 2px solid white;
     border-width: 0px 0 2px 2px;
+}
+
+.fade-out {
+  opacity: 0 !important;
+  visibility: hidden;
+  animation: fadeOut ease .2s;
+  -webkit-animation: fadeOut ease .2s;
+  -moz-animation: fadeOut ease .2s;
+  -o-animation: fadeOut ease .2s;
+  -ms-animation: fadeOut ease .2s;
 }
 
 @keyframes bounce {
@@ -153,4 +144,22 @@
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
   }
+}
+
+@keyframes fadeOut{
+  from {
+     opacity:1;
+   }
+   to {
+     opacity:0;
+   }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+     opacity:1;
+   }
+   to {
+     opacity:0;
+   }
 }

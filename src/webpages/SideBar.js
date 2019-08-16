@@ -23,11 +23,9 @@ class SideBar extends Component {
     return (
       <div className={`sidebar ${slideClass}`}  align = "center">
         <a> <ExploreButton className = "explore-button" name= "HOME" /> </a>
-
         <a> <ExploreButton className = "explore-button" name= "ABOUT ME" /> </a>
         <a> <ExploreButton className = "explore-button" name= "PORTFOLIO" /> </a>
         <a> <ExploreButton className = "explore-button" name= "RESUME" /> </a>
-
         <a> <span> <ContactIcons /> </span> </a>
       </div>
     );

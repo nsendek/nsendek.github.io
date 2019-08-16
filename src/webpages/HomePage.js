@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
 import './styles/HomePage.css';
-import './styles/parallax.css';
-import ExploreButton from './ExploreButton.js'
 import ContactIcons from './ContactIcons';
+import { connect } from 'react-redux';
+import { changeTab } from '../actions';
 
 class HomePage extends Component {
 
@@ -15,20 +15,39 @@ class HomePage extends Component {
           Artist • Programmer • Creative
         </p>
       </h1>
-      <ExploreButton className = "fade-in homepage-button"
-      name = "ABOUT ME" tD= {2500}/>
-
-      <ExploreButton className = "fade-in homepage-button"
-       name = "PORTFOLIO" tD= {3000}/>
-
-      <ExploreButton className = "fade-in homepage-button"
-      name = "CV" tD= {4000}/>
-
+      <div>
+        <button
+        className = "fade-in homepage-button"
+        onClick={() => {this.props.changeTab("ABOUT ME");}}>
+           ABOUT ME
+        </button>
+      </div>
+      <div>
+        <button
+        className = "fade-in homepage-button"
+        onClick={() => {this.props.changeTab("PORTFOLIO");}}>
+           PORTFOLIO
+        </button>
+      </div>
+      <div>
+        <button
+        className = "fade-in homepage-button"
+        onClick={() => {this.props.changeTab("RESUME");}}>
+           RESUME
+        </button>
+      </div>
       <span> <ContactIcons /> </span>
     </div>
     );
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeTab: id => {
+      dispatch(changeTab(id));
+    }
+  }
+}
 
-export default HomePage;
+export default connect(null,mapDispatchToProps)(HomePage);

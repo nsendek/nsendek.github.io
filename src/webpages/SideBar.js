@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 import './styles/ExplorePage.css';
 import './styles/SideBar.css';
-import ExploreButton from './ExploreButton.js';
 import ContactIcons from './ContactIcons';
 
 class SideBar extends Component {
@@ -22,11 +21,35 @@ class SideBar extends Component {
 
     return (
       <div className={`sidebar ${slideClass}`}  align = "center">
-        <a> <ExploreButton className = "explore-button" name= "HOME" /> </a>
-        <a> <ExploreButton className = "explore-button" name= "ABOUT ME" /> </a>
-        <a> <ExploreButton className = "explore-button" name= "PORTFOLIO" /> </a>
-        <a> <ExploreButton className = "explore-button" name= "RESUME" /> </a>
-        <a> <span> <ContactIcons /> </span> </a>
+        <div className='item'>
+          <button
+          className = "explore-button"
+          onClick={() => {this.props.changeTab("HOME");}}>
+             HOME
+          </button>
+        </div>
+        <div className='item'>
+          <button
+          className = "explore-button"
+          onClick={() => {this.props.changeTab("ABOUT ME");}}>
+             ABOUT ME
+          </button>
+        </div>
+        <div className='item'>
+          <button
+          className = "explore-button"
+          onClick={() => {this.props.changeTab("PORTFOLIO");}}>
+             PORTFOLIO
+          </button>
+        </div>
+        <div className='item'>
+          <button
+          className = "explore-button"
+          onClick={() => {this.props.changeTab("RESUME");}}>
+             RESUME
+          </button>
+        </div>
+        <div className='ab'> <span> <ContactIcons /> </span> </div>
       </div>
     );
   }

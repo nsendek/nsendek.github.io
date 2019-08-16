@@ -23,7 +23,7 @@ but move mobel stuff inside 700px area*/
    left: 0;
 }
 
-.sidebar a {
+.sidebar .item {
   display: block;
   color: white;
   padding: 16px;
@@ -295,6 +295,11 @@ from {
      margin-left: 0px;
    }
 }
+
+/*THE FOLLOWING CSS CODE REDECLARES AND CHANGES ALL THE PREVIOUS CSS CLASSES
+ SO THAT THE SIDE BAR ANIMATES PROPERLY ON SMALLER SCREENS. NAMES OF CLASSES
+ REMAIN THE SAME SO THAT SCREEN RESPONSIVENESS IS MANAGED BY CSS ONLY */
+
 
 @media screen and (max-width: 700px) {
   .sidebar {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './styles/SideBar.css';
 import './styles/IconBar.css';
 import git from './resources/logos/github.png';
 import link from './resources/logos/linkedin.png'

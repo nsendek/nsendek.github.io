@@ -3,14 +3,30 @@ import './styles/ExplorePage.css';
 
 class ContentContainer extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      scrolled: false
+    }
+  }
+
+ changeState(event) {
+ if (event.target.scrollTop <= 0) {
+   if(this.state.scrolled) {
+     this.setState({scrolled: false});
+   }
+ } else if (event.target.scrollTop > 0) {
+   if (!this.state.scrolled) {
+     this.setState({scrolled: true});
+     }
+ }
+}
+
   render() {
-    var className = "content ";
 //TODO: move parallax stuff from portfolio content
 // into content conatiner so all pages have it.
-
-
     return (
-      <div className = {className} height="100%">
+      <div className = "content" height="100%">
         {this.props.content}
       </div>
 

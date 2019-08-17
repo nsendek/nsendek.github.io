@@ -1,8 +1,9 @@
 import React, { Component} from 'react';
-import './styles/HomePage.css';
 import ContactIcons from './ContactIcons';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
+
+import './styles/home_page.css';
 
 class HomePage extends Component {
 

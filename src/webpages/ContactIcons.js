@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/IconBar.css';
+import './styles/iconbar.css';
 import git from './resources/logos/github.png';
 import linkedin from './resources/logos/linkedin.png'
 import facebook from './resources/logos/facebook.png';

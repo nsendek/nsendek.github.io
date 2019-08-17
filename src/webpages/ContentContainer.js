@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import './styles/ExplorePage.css';
-
 import './styles/parallax.css';
 
 import pic from './resources/NikoSendek.jpg'
@@ -35,8 +33,6 @@ class ContentContainer extends Component {
 }
 
   render() {
-//TODO: move parallax stuff from portfolio content
-// into content conatiner so all pages have it.
     return (
       <div className = "content" onScroll={(event) => this.changeState(event)}>
          <div className="main-container">

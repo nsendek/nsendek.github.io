@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
-import './styles/ExplorePage.css';
-import './styles/SideBar.css';
+import './styles/sidebar.css';
 import ContactIcons from './ContactIcons';
 import menu from './resources/menu-icon.png';
 
 const MOBILE_SCREEN_WIDTH = 700;
 
-class SmartSideBar extends Component {
+class SmartSidebar extends Component {
   // responsive SideBar that changes and expands (animated) based on screen size.
   // information passed down from the explorablePage parent is used
   constructor(props) {
@@ -61,7 +60,7 @@ class SmartSideBar extends Component {
   render() {
     var menuClassName = "icon menu-icon ";
     var sidebarClassName = "sidebar ";
-    var renderSideBar = true;
+    var renderSidebar = true;
 
     if (this.state.showSideBar) {
       menuClassName += "icon-slide-in";
@@ -70,39 +69,35 @@ class SmartSideBar extends Component {
       menuClassName += "icon-slide-out";
       sidebarClassName += "sidebar-slide-out";
     } else {
-      renderSideBar = false;
+      renderSidebar = false;
     }
-
     return (
+
       <div>
           {
-           renderSideBar
+           renderSidebar
               ?
               <div className={sidebarClassName}  align = "center">
                 <div className='item'>
                   <button
-                  className = "explore-button"
                   onClick={() => {this.props.changeTab("HOME");}}>
                      HOME
                   </button>
                 </div>
                 <div className='item'>
                   <button
-                  className = "explore-button"
                   onClick={() => {this.props.changeTab("ABOUT ME");}}>
                      ABOUT ME
                   </button>
                 </div>
                 <div className='item'>
                   <button
-                  className = "explore-button"
                   onClick={() => {this.props.changeTab("PORTFOLIO");}}>
                      PORTFOLIO
                   </button>
                 </div>
                 <div className='item'>
                   <button
-                  className = "explore-button"
                   onClick={() => {this.props.changeTab("RESUME");}}>
                      RESUME
                   </button>
@@ -135,4 +130,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null,mapDispatchToProps)(SmartSideBar);
+export default connect(null,mapDispatchToProps)(SmartSidebar);

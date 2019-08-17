@@ -1,13 +1,14 @@
 import React, { Component} from 'react';
-import SmartSideBar from './SmartSideBar';
-import './styles/ExplorePage.css';
+import SmartSidebar from './SmartSidebar';
 import ContentContainer from './ContentContainer';
+
+import './styles/explore_page.css';
 
 class ExplorablePage extends Component {
   render() {
     return (
       <div className = "explore page">
-        <SmartSideBar />
+        <SmartSidebar />
         <ContentContainer
         title = {this.props.title}
         content = {this.props.content}

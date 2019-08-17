@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import './styles/ExplorePage.css';
 import Resume from './resources/Resume.pdf';
 
 class ContactContent extends Component {

@@ -1,12 +1,4 @@
 import React, { Component} from 'react';
-import './styles/parallax.css';
-
-import pic from './resources/NikoSendek.jpg'
-import pic1 from './resources/wallpapers/pic1.png';
-import pic2 from './resources/wallpapers/pic2.png';
-import pic3 from './resources/wallpapers/pic3.png';
-import pic4 from './resources/wallpapers/pic4.png';
-import pic5 from './resources/wallpapers/pic5.png';
 
 class Porfolio extends Component {
   constructor(props) {

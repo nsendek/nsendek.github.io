@@ -29,67 +29,12 @@
  color: rgba(190, 190, 190, 1);
 }
 
-.Content-Sub {
+.content-sub {
   text-align: center;
   font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   font-style: italic;
   color: rgba(190, 190, 190, 1);
 }
-
-.slide-in-content {
-  animation: entryContent ease 0.4s;
-  -webkit-animation: entryContent ease 0.4s;
-  -moz-animation: entryContent ease 0.4s;
-  -o-animation: entryContent ease 0.4s;
-  -ms-animation: entryContent ease 0.4s;
-  margin-left : 300px !important;
-}
-
-.slide-out-content {
-  animation: exitContent ease 0.4s;
-  -webkit-animation: exitContent ease 0.4s;
-  -moz-animation: exitContent ease 0.4s;
-  -o-animation: exitContent ease 0.4s;
-  -ms-animation: exitContent ease 0.4s;
-  margin-left : 0px !important;
-}
-
-@keyframes exitContent {
-  from {
-     margin-left: 300px;
-   }
-   to {
-     margin-left: 0px;
-   }
-}
-
-@-webkit-keyframes exitContent {
-  from {
-     margin-left: 300px;
-   }
-   to {
-     margin-left: 0px;
-   }
-}
-
-@keyframes entryContent {
-  from {
-     margin-left: 0px;
-   }
-   to {
-     margin-left: 300px;
-   }
-}
-
-@-webkit-keyframes entryContent {
-  from {
-     margin-left: 0px;
-   }
-   to {
-     margin-left: 300px;
-   }
-}
-
 
 @media screen and (max-width: 900px) {
  .content {

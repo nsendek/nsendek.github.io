@@ -78,25 +78,25 @@ but move mobel stuff inside 700px area*/
   overflow: auto;
 }
 
-.desktop-slide-in {
-  animation: desktop-entry ease 0.4s;
-  -webkit-animation: desktop-entry ease 0.4s;
-  -moz-animation: desktop-entry ease 0.4s;
-  -o-animation: desktop-entry 0.4s;
-  -ms-animation: desktop-entry ease 0.4s;
+.icon-slide-in {
+  animation: icon-entry ease 0.4s;
+  -webkit-animation: icon-entry ease 0.4s;
+  -moz-animation: icon-entry ease 0.4s;
+  -o-animation: icon-entry 0.4s;
+  -ms-animation: icon-entry ease 0.4s;
   margin-left : 300px !important;
 }
 
-.desktop-slide-out {
-  animation: desktop-exit ease 0.4s;
-  -webkit-animation: desktop-exit ease 0.4s;
-  -moz-animation: desktop-exit ease 0.4s;
-  -o-animation: desktop-exit ease 0.4s;
-  -ms-animation: desktop-exit ease 0.4s;
+.icon-slide-out {
+  animation: icon-exit ease 0.4s;
+  -webkit-animation: icon-exit ease 0.4s;
+  -moz-animation: icon-exit ease 0.4s;
+  -o-animation: icon-exit ease 0.4s;
+  -ms-animation: icon-exit ease 0.4s;
   margin-left : 0px !important;
 }
 
-@keyframes desktop-entry {
+@keyframes icon-entry {
   from {
      margin-left: 0px;
    }
@@ -105,7 +105,7 @@ but move mobel stuff inside 700px area*/
    }
 }
 
-@-webkit-keyframes desktop-entry {
+@-webkit-keyframes icon-entry {
   from {
      margin-left: 0px;
    }
@@ -113,17 +113,7 @@ but move mobel stuff inside 700px area*/
      margin-left: 300px;
    }
 }
-
-@keyframes desktop-exit {
-  from {
-     margin-left: 300px;
-   }
-   to {
-     margin-left: 0px;
-   }
-}
-
-@-webkit-keyframes desktop-exit {
+@keyframes icon-exit {
   from {
      margin-left: 300px;
    }
@@ -132,137 +122,36 @@ but move mobel stuff inside 700px area*/
    }
 }
 
-/*note that 368px is the with of the sidebar with 4 buttons
-and must be adjusted if more or less buttons are added. if cosntants existed in css this would be easier*/
-.mobile-slide-in {
-  animation: mobile-entry ease 0.4s;
-  -webkit-animation: mobile-entry ease 0.4s;
-  -moz-animation: mobile-entry ease 0.4s;
-  -o-animation: mobile-entry ease 0.4s;
-  -ms-animation: mobile-entry ease 0.4s;
-  margin-top: 376px !important;
-}
-
-.mobile-slide-out {
-  animation: mobile-exit ease 0.4s;
-  -webkit-animation: mobile-exit ease 0.4s;
-  -moz-animation: mobile-exit ease 0.4s;
-  -o-animation: mobile-exit ease 0.4s;
-  -ms-animation: mobile-exit ease 0.4s;
-  margin-top: 0% !important;
-}
-
-@keyframes mobile-entry {
-from {
-   margin-top: 0%;
- }
- to {
-   margin-top: 376px;
- }
-}
-
-@-webkit-keyframes mobile-entry {
-from {
-   margin-top: 0%;
- }
- to {
-   margin-top: 376px;
- }
-}
-
-@keyframes mobile-exit {
-from {
-   margin-top: 376px;
- }
- to {
-   margin-top: 0%;
- }
-}
-
-@-webkit-keyframes mobile-exit {
+@-webkit-keyframes icon-exit {
   from {
-     margin-top: 376px;
+     margin-left: 300px;
    }
    to {
-     margin-top: 0%;
-   }
-}
-
-.slide-in {
-  animation: entry ease 0.4s;
-  -webkit-animation: entry ease 0.4s;
-  -moz-animation: entry ease 0.4s;
-  -o-animation: entry ease 0.4s;
-  -ms-animation: entry ease 0.4s;
-   margin-top: 0% !important;
-}
-.slide-out {
-  animation: exit ease 0.4s;
-  -webkit-animation: exit ease 0.4s;
-  -moz-animation: exit ease 0.4s;
-  -o-animation: exit ease 0.4s;
-  -ms-animation: exit ease 0.4s;
-  margin-top : -376px !important;
-}
-
-@keyframes entry {
-from {
-   margin-top: -376px;
- }
- to {
-   margin-top: 0%;
- }
-}
-
-@-webkit-keyframes entry {
-  from {
-     margin-top: -376px;
-   }
-   to {
-     margin-top: 0%;
-   }
-}
-
-@keyframes exit {
-from {
-  margin-top: 0%;
-
- }
- to {
-   margin-top: -376px;
- }
-}
-
-@-webkit-keyframes exit {
-  from {
-    margin-top: 0%;
-   }
-   to {
-     margin-top: -376px;
+     margin-left: 0px;
    }
 }
 
 
-.slide-out-desk {
-  animation: exitDesk ease 0.4s;
-  -webkit-animation: exitDesk ease 0.4s;
-  -moz-animation: exitDesk ease 0.4s;
-  -o-animation: exitDesk ease 0.4s;
-  -ms-animation: exitDesk ease 0.4s;
+.sidebar-slide-out {
+  animation: sidebar-exit ease 0.4s;
+  -webkit-animation: sidebar-exit ease 0.4s;
+  -moz-animation: sidebar-exit ease 0.4s;
+  -o-animation: sidebar-exit ease 0.4s;
+  -ms-animation: sidebar-exit ease 0.4s;
     margin-left : -300px !important;
 }
 
-.slide-in-desk {
-  animation: entryDesk ease 0.4s;
-  -webkit-animation: entryDesk ease 0.4s;
-  -moz-animation: entryDesk ease 0.4s;
-  -o-animation: entryDesk ease 0.4s;
-  -ms-animation: entryDesk ease 0.4s;
+.sidebar-slide-in {
+  animation: sidebar-entry ease 0.4s;
+  -webkit-animation: sidebar-entry ease 0.4s;
+  -moz-animation: sidebar-entry ease 0.4s;
+  -o-animation: sidebar-entry ease 0.4s;
+  -ms-animation: sidebar-entry ease 0.4s;
   margin-left : 0px !important;
 }
 
 
-@keyframes exitDesk {
+@keyframes sidebar-exit {
 from {
    margin-left: 0px;
  }
@@ -271,7 +160,7 @@ from {
  }
 }
 
-@-webkit-keyframes exitDesk {
+@-webkit-keyframes sidebar-exit {
   from {
      margin-left:0px;
    }
@@ -280,7 +169,7 @@ from {
    }
 }
 
-@keyframes entryDesk {
+@keyframes sidebar-entry {
   from {
      margin-left: -300px;
    }
@@ -289,7 +178,7 @@ from {
    }
 }
 
-@-webkit-keyframes entryDesk {
+@-webkit-keyframes sidebar-entry {
   from {
      margin-left: -300px;
    }
@@ -313,6 +202,98 @@ from {
   .sidebar span {
      bottom: 0;
      left: 1;
+  }
+
+  .icon-slide-in {
+    margin-top: 376px !important;
+    margin-left: 0% !important;
+  }
+
+  .icon-slide-out {
+   margin-top:  0% !important;
+   margin-left: 0% !important;
+  }
+
+  @keyframes icon-entry {
+  from {
+     margin-top: 0% ;
+   }
+   to {
+     margin-top: 376px;
+   }
+  }
+
+  @-webkit-keyframes icon-entry {
+  from {
+     margin-top: 0%;
+   }
+   to {
+     margin-top: 376px;
+   }
+  }
+
+  @keyframes icon-exit {
+  from {
+     margin-top: 376px;
+   }
+   to {
+     margin-top: 0%;
+   }
+  }
+
+  @-webkit-keyframes icon-exit {
+    from {
+       margin-top: 376px;
+     }
+     to {
+       margin-top: 0%;
+     }
+  }
+
+  .sidebar-slide-in {
+     margin-top: 0% !important;
+     margin-left:  0% !important;
+  }
+  .sidebar-slide-out {
+    margin-top : -376px !important;
+    margin-left:  0% !important;
+  }
+
+  @keyframes sidebar-entry {
+  from {
+     margin-top: -376px;
+   }
+   to {
+     margin-top: 0%;
+   }
+  }
+
+  @-webkit-keyframes sidebar-entry {
+    from {
+       margin-top: -376px;
+     }
+     to {
+       margin-top: 0%;
+     }
+  }
+
+  @keyframes sidebar-exit {
+  from {
+    margin-top: 0%;
+
+   }
+   to {
+     margin-top: -376px;
+   }
+  }
+
+  @-webkit-keyframes sidebar-exit {
+    from {
+      margin-top: 0%;
+     }
+     to {
+       margin-top: -376px;
+     }
   }
 
 }

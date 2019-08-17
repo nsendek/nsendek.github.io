@@ -8,17 +8,6 @@ import PortfolioContent from './PortfolioContent';
 
 class WebSite extends Component {
 
-componentDidMount(){
-  document.body.style.backgroundColor = "black";
-
-//   if($(window).width() > 400) {
-//     $('#body').addClass('limit1200');
-//     $('#body').removeClass('limit400');
-// }else{
-//     $('#body').addClass('limit400');
-//     $('#body').removeClass('limit1200');
-}
-
 renderContent = () => {
   switch (this.props.tab) {
     case "HOME":

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/IconBar.css';
 import git from './resources/logos/github.png';
-import link from './resources/logos/linkedin.png'
+import linkedin from './resources/logos/linkedin.png'
 import facebook from './resources/logos/facebook.png';
 import insta from './resources/logos/instagram.png';
 import at from './resources/logos/@.png';
@@ -17,7 +17,7 @@ class ContactContent extends Component {
           </a>
 
           <a  rel="noopener noreferrer" href="https://www.linkedin.com/in/nikosendek/" target="_blank">
-            <img src={link} alt="linkedin profile" width="100%" height="100%"/>
+            <img src={linkedin} alt="linkedin profile" width="100%" height="100%"/>
           </a>
 
           <a rel="noopener noreferrer" href="https://www.facebook.com/niko.sendek" target="_blank">

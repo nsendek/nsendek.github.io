@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 import './styles/ExplorePage.css';
 import './styles/SideBar.css';
-import SideBar from './SideBar';
+import ContactIcons from './ContactIcons';
 import menu from './resources/menu-icon.png';
 
 const MOBILE_SCREEN_WIDTH = 700;
@@ -59,37 +59,58 @@ class SmartSideBar extends Component {
   }
 
   render() {
-    //TODO: organize the code in this area (css names)
     var menuClassName = "icon menu-icon ";
-    if (this.state.mobile) { //mobile menu icon styles
-      if (this.state.showSideBar) {
-        menuClassName += "mobile-slide-in ";
-      } else if (this.state.unmounting) {
-        menuClassName += "mobile-slide-out ";
-      }
-    } else { //desktop menu icon styles
-      if (this.state.showSideBar) {
-        menuClassName += "desktop-slide-in";
-      } else if (this.state.unmounting) {
-        menuClassName += "desktop-slide-out";
-      }
+    var sidebarClassName = "sidebar ";
+    var renderSideBar = true;
+
+    if (this.state.showSideBar) {
+      menuClassName += "icon-slide-in";
+      sidebarClassName += "sidebar-slide-in";
+    } else if (this.state.unmounting) {
+      menuClassName += "icon-slide-out";
+      sidebarClassName += "sidebar-slide-out";
+    } else {
+      renderSideBar = false;
     }
 
     return (
       <div>
           {
-            this.state.mobile // in mobile mode
-            ? this.state.showSideBar
-              ? <SideBar  entry = {true} />
-              : this.state.unmounting
-                ? <SideBar exit = {true} />
-                : null
-
-            : this.state.showSideBar
-              ? <SideBar entryDesk = {true}/>
-              : this.state.unmounting
-                ? <SideBar exitDesk = {true} />
-                : null
+           renderSideBar
+              ?
+              <div className={sidebarClassName}  align = "center">
+                <div className='item'>
+                  <button
+                  className = "explore-button"
+                  onClick={() => {this.props.changeTab("HOME");}}>
+                     HOME
+                  </button>
+                </div>
+                <div className='item'>
+                  <button
+                  className = "explore-button"
+                  onClick={() => {this.props.changeTab("ABOUT ME");}}>
+                     ABOUT ME
+                  </button>
+                </div>
+                <div className='item'>
+                  <button
+                  className = "explore-button"
+                  onClick={() => {this.props.changeTab("PORTFOLIO");}}>
+                     PORTFOLIO
+                  </button>
+                </div>
+                <div className='item'>
+                  <button
+                  className = "explore-button"
+                  onClick={() => {this.props.changeTab("RESUME");}}>
+                     RESUME
+                  </button>
+                </div>
+                <div className='item'> <span> <ContactIcons /> </span> </div>
+              </div>
+              :
+              null
           }
           {
             <div className = {menuClassName} >

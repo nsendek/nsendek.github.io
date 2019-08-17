@@ -71,6 +71,11 @@ class SmartSidebar extends Component {
     } else {
       renderSidebar = false;
     }
+    
+    if(renderSidebar) {
+      this.props.onSidebarChange(sidebarClassName); //callback to parent page
+    }
+
     return (
 
       <div>

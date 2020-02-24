@@ -1,6 +1,29 @@
 .home {
-  background-image: url("../resources/test2.png");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.75)), url("../resources/test2.png") ;
 }
+
+
+.blinking{
+  animation:blinkingText 1.2s infinite;
+  -webkit-animation :blinkingText 1.2s infinite;
+}
+
+@keyframes blinkingText{
+  0%{     color: rgb(221, 11, 240);    }
+  49%{    color: rgb(46, 236, 20); }
+  60%{    color: rgb(0, 174, 255); }
+  99%{    color:  transparent;  }
+  100%{   color: #FFF;    }
+}
+
+@-webkit-keyframes blinkingText{
+  0%{     color: rgb(221, 11, 240);    }
+  49%{    color: rgb(46, 236, 20); }
+  60%{    color: rgb(0, 174, 255); }
+  99%{    color:  transparent;  }
+  100%{   color: #FFF;    }
+}
+
 
 .homepage-header {
   text-align: center;
@@ -45,18 +68,6 @@
 .homepage-button:active {
   transform: scale(.9);
 }
-
-#container {
-  perspective: 40px;
-}
-
-#inner {
-  width: 20em;
-  height: 18em;
-  background-color: white;
-  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
-}
-
 
 .fade-in {
   animation: fadeIn ease 2s;

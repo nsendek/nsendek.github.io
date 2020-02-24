@@ -1,6 +1,3 @@
-/*TODO: change all to common classes (remove mobile/desktop names)
-but move mobel stuff inside 700px area*/
-
 .sidebar {
   margin: 0;
   z-index:1;
@@ -98,6 +95,7 @@ but move mobel stuff inside 700px area*/
 
 .icon:hover {
   opacity: 0.5;
+
 }
 
 /*margin-left: 250px;*/
@@ -105,6 +103,11 @@ but move mobel stuff inside 700px area*/
   position: fixed;
   float: left;
   overflow: auto;
+  hr {
+    padding: 0px;
+    margin-bottom:  0px ;
+    float:left;
+  }
 }
 
 .icon-slide-in {
@@ -168,6 +171,7 @@ but move mobel stuff inside 700px area*/
   -o-animation: sidebar-exit ease 0.4s;
   -ms-animation: sidebar-exit ease 0.4s;
     margin-left : -300px !important;
+    margin-right : 0px !important;
 }
 
 .sidebar-slide-in {

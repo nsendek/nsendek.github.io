@@ -9,6 +9,7 @@
 .parallax-title {
   pointer-events: none;
   display: flex;
+  z-index: 10;
   flex: 1 0 auto;
   height: 100vh;
   width: 100vw;
@@ -37,7 +38,7 @@
   display: flex;
   position: absolute;
   flex: 1 0 auto;
-  z-index: 1;
+  z-index: -1;
   height: 100vh;
   justify-content: center;
   align-items: center;
@@ -53,19 +54,19 @@
 }
 
 .pic1 {
-  transform: translateZ(-1px) scale(2);
+  transform: translateZ(-1px) scale(2) translateY(-5%);
 }
 .pic2 {
   transform: translateZ(-2px) scale(4);
 }
 .pic3 {
-  transform: translateZ(-3px) scale(9);
+  transform: translateZ(-3px) scale(7) translateY(-15%);
 }
 .pic4 {
-  transform: translateZ(-2px) scale(4);
+  transform: translateZ(-2px) scale(5);
 }
 .pic5 {
-  transform: translateZ(-1px) scale(2);
+  transform: translateZ(-1px) scale(2) translateY(-5%);
 }
 .pic6 {
   transform:translateZ(-4px) scale(10);

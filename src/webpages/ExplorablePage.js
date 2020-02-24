@@ -7,7 +7,12 @@ import './styles/explore_page.css';
 class ExplorablePage extends Component {
 
   sidebarChange = (className) => {
-    console.log(className);
+    if (className.includes('sidebar-slide-in')) {
+      console.log("SLIDE IN");
+    }
+    if (className.includes('sidebar-slide-out')) {
+      console.log("SLIDE OUT");
+    }
   }
 
   render() {
@@ -16,7 +21,6 @@ class ExplorablePage extends Component {
         <SmartSidebar
         onSidebarChange = {this.sidebarChange}
         />
-        
         <ContentContainer
         title = {this.props.title}
         content = {this.props.content}

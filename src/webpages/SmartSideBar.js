@@ -58,9 +58,9 @@ class SmartSidebar extends Component {
   }
 
   render() {
-    var menuClassName = "icon menu-icon ";
-    var sidebarClassName = "sidebar ";
-    var renderSidebar = true;
+    let menuClassName = "icon menu-icon ";
+    let sidebarClassName = "sidebar ";
+    let renderSidebar = true;
 
     if (this.state.showSideBar) {
       menuClassName += "icon-slide-in";
@@ -71,7 +71,7 @@ class SmartSidebar extends Component {
     } else {
       renderSidebar = false;
     }
-    
+
     if(renderSidebar) {
       this.props.onSidebarChange(sidebarClassName); //callback to parent page
     }
@@ -112,15 +112,15 @@ class SmartSidebar extends Component {
               :
               null
           }
-          {
-            <div className = {menuClassName} >
+
+            <div onClick= {this.handleClick} className = {menuClassName} >
             <img src={menu}
             alt= "Menu Icon"
-            onClick= {this.handleClick}
             width="50px"
             height="50px"/>
             </div>
-          }
+
+
       </div>
 
     );

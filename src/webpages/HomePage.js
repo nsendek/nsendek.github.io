@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 import ContactIcons from './ContactIcons';
 import { connect } from 'react-redux';
 import { changeTab } from '../actions';
+import Resume from './resources/resume.pdf';
+import Portfolio from './resources/portfolio.pdf';
 
 import './styles/home_page.css';
 
@@ -15,28 +17,41 @@ class HomePage extends Component {
         <p className="homepage-sub">
           Artist • Programmer • Creative
         </p>
+        <p className= "blinking homepage-sub" >
+         Website is still under construction.
+        </p>
       </h1>
-      <div>
+      
+      {/* <div>
         <button
         className = "fade-in homepage-button"
         onClick={() => {this.props.changeTab("ABOUT ME");}}>
            ABOUT ME
         </button>
-      </div>
+      </div> */}
       <div>
         <button
         className = "fade-in homepage-button"
-        onClick={() => {this.props.changeTab("PORTFOLIO");}}>
+        onClick={() => {window.open(Portfolio);}}
+        >
            PORTFOLIO
         </button>
       </div>
       <div>
         <button
         className = "fade-in homepage-button"
-        onClick={() => {this.props.changeTab("RESUME");}}>
-           RESUME
+        onClick={() => {window.open(Resume);}}>
+           CV
         </button>
       </div>
+      <div>
+        <button
+        className = "fade-in homepage-button"
+        onClick={() => {}}>
+           Code Demos
+        </button>
+      </div>
+      
       <span> <ContactIcons /> </span>
     </div>
     );

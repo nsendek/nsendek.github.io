@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import updateState from './reducers'
-import './index.css';
-import WebSite from './webpages/index.js'
+import Test from "./components/test";
+// import { Provider } from 'react-redux';
+// import { createStore } from 'redux';
+// import updateState from './reducers'
+// import './index.css';
+// import WebSite from './webpages/index.js'
 
-const store = createStore(updateState)
+// const store = createStore(updateState)
 
 ReactDOM.render(
-  <Provider store={store}>
-    <WebSite />
-  </Provider>
+    <Test />
   , document.getElementById('root'));
-registerServiceWorker();

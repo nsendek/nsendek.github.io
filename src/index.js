@@ -9,6 +9,8 @@ import WebSite from './webpages/index.js'
 
 const store = createStore(updateState)
 
+console.log("v.9.29.21");
+
 ReactDOM.render(
   <Provider store={store}>
     <WebSite />

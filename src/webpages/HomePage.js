@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { changeTab } from '../actions';
 import Resume from './resources/resume.pdf';
 import Portfolio from './resources/portfolio.pdf';
-
+import { navigate } from "@reach/router";
 import './styles/home_page.css';
 
 class HomePage extends Component {
@@ -15,26 +15,19 @@ class HomePage extends Component {
       <h1 className="homepage-header fade-in">
           Nikodimos Z. Sendek
         <p className="homepage-sub">
-          Artist • Programmer • Creative
+          Artist • Programmer • Creator
         </p>
         <p className= "blinking homepage-sub" >
          Website is still under construction.
         </p>
       </h1>
       
-      {/* <div>
-        <button
-        className = "fade-in homepage-button"
-        onClick={() => {this.props.changeTab("ABOUT ME");}}>
-           ABOUT ME
-        </button>
-      </div> */}
       <div>
         <button
         className = "fade-in homepage-button"
         onClick={() => {window.open(Portfolio);}}
         >
-           PORTFOLIO
+           DESIGN PORTFOLIO
         </button>
       </div>
       <div>
@@ -47,8 +40,8 @@ class HomePage extends Component {
       <div>
         <button
         className = "fade-in homepage-button"
-        onClick={() => {}}>
-           Code Demos
+        onClick={() => {navigate('/demos')}}>
+           Creative Coding
         </button>
       </div>
       

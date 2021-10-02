@@ -4,6 +4,9 @@ import { changeTab } from '../actions';
 import './styles/sidebar.css';
 import ContactIcons from './ContactIcons';
 import menu from './resources/menu-icon.png';
+import { navigate } from "@reach/router";
+import Resume from './resources/resume.pdf';
+import Portfolio from './resources/portfolio.pdf';
 
 const MOBILE_SCREEN_WIDTH = 700;
 
@@ -85,7 +88,7 @@ class SmartSidebar extends Component {
               <div className={sidebarClassName}  align = "center">
                 <div className='item'>
                   <button
-                  onClick={() => {this.props.changeTab("HOME");}}>
+                  onClick={() => {navigate('/');}}>
                      HOME
                   </button>
                 </div>
@@ -97,14 +100,14 @@ class SmartSidebar extends Component {
                 </div>
                 <div className='item'>
                   <button
-                  onClick={() => {this.props.changeTab("PORTFOLIO");}}>
+                  onClick={() => {window.open(Portfolio);}}>
                      PORTFOLIO
                   </button>
                 </div>
                 <div className='item'>
                   <button
-                  onClick={() => {this.props.changeTab("RESUME");}}>
-                     RESUME
+                  onClick={() => {window.open(Resume);}}>
+                     CV
                   </button>
                 </div>
                 <div className='item'> <span> <ContactIcons /> </span> </div>

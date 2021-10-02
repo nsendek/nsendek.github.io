@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import ResumeContent from './ResumeContent';
 import CodeContent from './CodeContent';
 import PortfolioContent from './PortfolioContent';
-import { Router, navigate } from "@reach/router";
+import { Router, navigate, Redirect } from "@reach/router";
 
 class WebSite extends Component {
 
@@ -47,12 +47,19 @@ renderContent = () => {
   render() {
     return (
       <Router> 
+
+           <Redirect from="/youtube" to="//www.youtube.com" />
+
+          
+ 
+
         <HomePage
           path = "/"
         />
-        <CodeContent
-        path = "/hello"
-
+        <ExplorablePage
+        path = '/demos'
+        title = "Demos"
+        content = {<CodeContent />}
         />
       </Router>
     );

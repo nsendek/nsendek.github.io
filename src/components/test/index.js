@@ -1,13 +1,15 @@
-import React from 'react';
-import styles from './index.css';
-console.log({styles})
-const Test = ({}) => {
-    return (
-        <div className={styles.mainText}>
-            Hello World
-        </div>
-    );
-};
+import React from "react";
+import styles from "./index.css";
+
+
+function Test () {
+  return (
+      <div className={styles.mainText}>
+          Hello World 12
+      </div>
+  );
+
+}
 
 Test.propTypes = {
 

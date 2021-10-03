@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 require('dotenv').config();
 
-// const defaults = require('lodash').defaults;
 const path = require('path');
 
 module.exports = (env, argv) => { 
@@ -48,24 +47,24 @@ return {
           }
         }
       },
-      // {
-      //   test: /\.scss$/,
-      //   exclude: /node_modules/,
-      //   use: [
-      //     'style-loader',
-      //     {
-      //       loader: 'css-loader',
-      //       options: {
-      //         importLoaders: 1,
-      //         modules: {
-      //             localIdentName: '[name]_[local]_[hash:base64:5]',
-      //             exportLocalsConvention: "camelCase"
-      //         }
-      //       }
-      //     },
-      //     'sass-loader'
-      //   ]
-      // },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                  localIdentName: '[name]_[local]_[hash:base64:5]',
+                  exportLocalsConvention: "camelCase"
+              }
+            }
+          },
+          'sass-loader'
+        ]
+      },
       
       {
         test: /\.css$/,
@@ -103,8 +102,6 @@ return {
       }
     ]
   },
-  plugins: [],
-  // https://stackoverflow.com/questions/39798095/multiple-html-files-using-webpack/63385300
   plugins: [
     new HtmlWebpackPlugin({ 
       template: './public/index.html' 
@@ -121,28 +118,4 @@ return {
       "process.env": JSON.stringify(process.env)
     }),
   ],
-
-  // reduced splittng
-  // optimization: {
-  //   runtimeChunk: 'single',
-  //   splitChunks: {
-  //     chunks: 'all',
-  //     maxInitialRequests: Infinity,
-  //     minSize: 0,
-  //   },
-  // },
-
-  // devServer: {
-  //   historyApiFallback: {
-  //     // Webpack dev server needs rewrites 
-  //     // EXAMPLES: 
-  //     // - localhost:8080/users/:id => localhost:8080/users.html
-  //     // - localhost:8080/projects/:id => localhost:8080/projects.html
-  //     // - localhost:8080/gui => localhost:8080/gui.html
-      
-  //     // Rewrites for firebase hosting are configured in ./firebase.json, 
-  //     // and should be similar to patterns in ./routes.json
-  //     rewrites: rewrites
-  //   }
-  // }
 }};

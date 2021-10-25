@@ -1,0 +1,99 @@
+@import "../../scss/variables.scss";
+
+$transition : 0.4s;
+$size : 3;
+$space : 7px;
+$drop-down-width : 200px;
+
+.menu {
+  position: absolute;
+  top : 0px;
+  right: 0px;
+  padding: $space;
+  overflow: hidden;
+}
+
+.menu-checkbox {
+  display: flex;
+  width : #{9px * $size + 2 * $space};
+  margin-left: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+
+  & label {
+    padding: $space;
+    display: flex;
+    flex-direction: column;
+    width: #{9px * $size};
+    align-items: center;
+    cursor: pointer;
+
+    &:hover span {
+      background: #81F4E1;
+    }
+  }
+
+  & label input[type="checkbox"] {
+    display:none;
+  }
+
+  & label span {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    height: #{1px * $size};
+    margin: #{1px * $size} 0;
+    transition: $transition;
+  }
+
+  & input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+    transform: translate(0px,#{3px * $size}) rotatez(45deg) scaleX(1.1);
+  }
+
+  & input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+    transform:  rotatez(-45deg) scaleX(1.1);
+  }
+
+  & input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+    transform:  translate(0px,-#{3px * $size}) rotatez(-45deg) scaleX(1.1);
+  }
+}
+
+.drop-down {
+  position: relative;
+  background-color: $ui-black-50percent;
+  width: $drop-down-width;
+  margin-top: $space;
+  transition: $transition;
+  color: white;
+
+  // moving off screen by default
+  transform: translate(#{$drop-down-width + 4 * $space}, 0);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  & a {
+    &:nth-of-type(n+2) {
+      border-top : 1px solid $ui-black-50percent;
+    }
+    
+    color: white;
+    padding: #{2.5 * $space};
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: $secondary;
+      background-color: $ui-black-50percent;
+    }
+  }
+}
+
+.drop-down.slide-in {
+  transform: translate(0, 0);
+}

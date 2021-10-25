@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Test from "./components/test";
+
+
+import ParticleWall from "./components/particle-wall";
+import ContactIcons from "./components/contact-icons";
+import Menu from "./components/menu";
+
+// import Home from './views/home'
 
 /*
  * Import { Provider } from 'react-redux';
@@ -10,10 +16,22 @@ import Test from "./components/test";
  * import WebSite from './webpages/index.js'
  */
 
-// Const store = createStore(updateState)
+import {
+  HashRouter as Router,
+  Link,
+  Switch,
+  Route,
+  Redirect,
+  useLocation,
+  useParams
+} from 'react-router-dom'
 
+const Website = () => (
+  <React.Fragment>
+    <ParticleWall />
+    <Menu />
+    <ContactIcons />
+  </React.Fragment>
+)
 
-ReactDOM.render(
-    <Test />
-    , document.getElementById("root")
-);
+ReactDOM.render(<Website />, document.getElementById("root"));

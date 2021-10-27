@@ -4,6 +4,9 @@
 # production
 /dist
 
+# images and files not needed in source code repo
+/static
+
 # misc
 .env
 

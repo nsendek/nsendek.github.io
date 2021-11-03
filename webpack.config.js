@@ -44,7 +44,8 @@ return {
           use: {
             loader: "babel-loader",
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react']
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+              plugins: ['@babel/transform-runtime']
             }
           }
         },
@@ -66,33 +67,14 @@ return {
             'sass-loader'
           ]
         },
-        
         {
           test: /\.css$/,
-          exclude: /node_modules/,
-          use: [
-            'style-loader',
-            {
-              loader: 'css-loader',
-              options: {
-                modules: {
-                    localIdentName: '[folder]_[local]_[hash:base64:5]',
-                    exportLocalsConvention: "camelCase"
-                },
-              }
-            }
-          ]
-        },
-        // some libraries in node_modules REQUIRE that you don't use exclusively CSS-modules
-        {
-          test: /\.css$/,
+          // exclude: /node_modules/,
           use: [
             'style-loader',
             'css-loader'
           ],
-          include: /node_modules/,
         },
-
         {
           test: /\.html$/,
           loader: "html-loader",
@@ -132,11 +114,6 @@ return {
       new webpack.DefinePlugin({
         "process.env": JSON.stringify(process.env)
       }),
-    ],
-    // devServer: {
-    //   stats: {
-    //     modules: false,
-    //   },
-    // },
+    ]
   }
 };

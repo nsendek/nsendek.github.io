@@ -1,0 +1,28 @@
+@import "../../scss/variables.scss";
+
+img.portrait {
+  height: 400px;
+  width : $mobileIntermediate;
+  object-fit: cover;
+  margin: 15px;
+  filter: drop-shadow(5px 5px 0px $secondary);
+}
+
+.about-view {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.bio {
+  width: 600px;
+}
+
+@media #{$small}, #{$medium}, #{$intermediate}  {
+  .about-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 75px 0;
+  }
+}

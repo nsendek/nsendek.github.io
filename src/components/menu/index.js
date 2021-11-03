@@ -1,8 +1,8 @@
 /* eslint-disable indent */
-import React, { useState } from 'react'
+import React from 'react'
 import classNames from 'classnames';
 
-import styles from "./index.scss"
+import styles from "./styles.scss"
 
 const MenuCheckbox = (props) => (
   <div className={styles.menuCheckbox}>
@@ -13,31 +13,30 @@ const MenuCheckbox = (props) => (
       <span></span>
     </label>
   </div> 
-)
+);
 
-const Menu =(props) => {
-  const [checked, setChecked] = useState(false);
+const Menu =() => {
+  const [checked, setChecked] = React.useState(false);
 
   const handleChange= (e) => {
     setChecked(e.target.checked)
   }
 
-  const handleClick = (route) => {
-    setChecked(false);
-    window.location = route;
-  }
-
-  const handleOpen = (path) => {
-    setChecked(false);
-    window.open(path);
-  }
+  const closeMenu = () => setChecked(false);
 
   const hash = window.location.hash;
   const validHashes = ["#art", "#about", "#projects"]
-  
-  return (
-    <div className={styles.menu}>
 
+  // handle close on offclick
+  window.addEventListener('click', function(e){  
+    const menu = document.getElementById('menu-dropdown');
+    if (menu && !menu.contains(e.target)){
+      setChecked(false);
+    }
+  });
+
+  return (
+    <div id="menu-dropdown" className={styles.menu}>
       <MenuCheckbox checked={checked} onChange={handleChange} />
 
       <div 
@@ -46,36 +45,37 @@ const Menu =(props) => {
           {[styles.slideIn] : checked }
         )}
       >
-        <a onClick={() => handleOpen('./static/documents/resume.pdf')}>
-          CV
+        <a onClick={closeMenu} target="_blank" href='./static/documents/resume.pdf'> 
+          cv
         </a>
-        <a onClick={() => handleOpen('./static/documents/portfolio.pdf')}>
+        <a onClick={closeMenu} target="_blank" href='./static/documents/portfolio.pdf'>
           portfolio
         </a>
         
-        {hash != "#about"
-          ? <a onClick={() => handleClick("#about")}>
+        {hash != "#about" && (
+          <a onClick={closeMenu} href="#about" >
             about
           </a>
-          : null}
+          )}
 
-        {hash != "#projects"
-          ? <a onClick={() => handleClick("#projects")}>
+        {hash != "#projects" && (
+          <a onClick={closeMenu} href="#projects">
             projects
           </a>
-          : null}
+          )}
 
-        {hash != "#art"
-          ? <a onClick={() => handleClick("#art")}>
+        {/* {hash != "#art" && (
+          <a onClick={closeMenu} href="#art">
             art
           </a>
-          : null}
+          )} */}
 
-        {hash && validHashes.includes(hash)
-          ? <a onClick={() => handleClick("/")}>
-              home
-            </a>
-          : null}
+        {hash && validHashes.includes(hash) && (
+          <a onClick={closeMenu} href="#">
+            home
+          </a>
+          )}
+
       </div>
     </div>
   )

@@ -1,0 +1,31 @@
+@import "../../scss/variables.scss";
+
+.container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+
+  color: white;
+
+  display: flex;
+
+  & h1 {
+    font-size: 4vw;
+    font-weight: normal;
+    margin: 15px 10px;
+    pointer-events: auto;
+  }
+  
+  & h2 {
+    pointer-events: auto;
+    font-size: 2vw;
+    font-weight: normal;
+    margin: 15px 10px;
+  }
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+  text-align: end;
+}

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import styles from './index.scss';
+import styles from './styles.scss';
 
 class ContactIcons extends PureComponent {
 
@@ -24,7 +24,7 @@ class ContactIcons extends PureComponent {
           <img src="./static/logos/instagram.png" alt= "instagram profile" width="100%" height="100%"/>
         </a>
 
-        <a href="mailto:nsendek@mit.edu" >
+        <a href="mailto:nsendek@mit.edu" target="_blank">
           <img src="./static/logos/email.png" alt= "my email" width="100%" height="100%"/>
         </a>
 

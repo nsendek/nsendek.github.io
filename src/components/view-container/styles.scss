@@ -1,0 +1,31 @@
+@import "../../scss/variables.scss";
+
+.view-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+
+  width : 100vw;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  background-color: $ui-black-25percent;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: scroll;
+}
+
+
+// Firefox doesn't support backdrop-filter so we'll increase opacity
+@-moz-document url-prefix() {
+  .view-container {
+    background-color: $ui-black-75percent;
+  }
+}

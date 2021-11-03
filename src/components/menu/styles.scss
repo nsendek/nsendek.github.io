@@ -2,25 +2,28 @@
 
 $transition : 0.4s;
 $size : 3;
-$space : 7px;
+$space : 8px;
+$menu-padding : 14px;
 $drop-down-width : 200px;
 
 .menu {
   position: absolute;
   top : 0px;
   right: 0px;
-  padding: $space;
+  padding: $menu-padding;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .menu-checkbox {
+  pointer-events: auto;
   display: flex;
   width : #{9px * $size + 2 * $space};
   margin-left: auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.5);
+  background-color: $ui-black-50percent;
 
   & label {
     padding: $space;
@@ -49,7 +52,7 @@ $drop-down-width : 200px;
   }
 
   & input[type="checkbox"]:checked ~ span:nth-of-type(1) {
-    transform: translate(0px,#{3px * $size}) rotatez(45deg) scaleX(1.1);
+    transform: translateY(#{3px * $size}) rotatez(45deg) scaleX(1.1);
   }
 
   & input[type="checkbox"]:checked ~ span:nth-of-type(2) {
@@ -57,11 +60,12 @@ $drop-down-width : 200px;
   }
 
   & input[type="checkbox"]:checked ~ span:nth-of-type(3) {
-    transform:  translate(0px,-#{3px * $size}) rotatez(-45deg) scaleX(1.1);
+    transform:  translateY(-#{3px * $size}) rotatez(-45deg) scaleX(1.1);
   }
 }
 
 .drop-down {
+  pointer-events: auto;
   position: relative;
   background-color: $ui-black-50percent;
   width: $drop-down-width;
@@ -70,7 +74,7 @@ $drop-down-width : 200px;
   color: white;
 
   // moving off screen by default
-  transform: translate(#{$drop-down-width + 4 * $space}, 0);
+  transform: translateX(#{$drop-down-width + 2 * $menu-padding});
 
   display: flex;
   flex-direction: column;
@@ -82,18 +86,18 @@ $drop-down-width : 200px;
     }
     
     color: white;
-    padding: #{2.5 * $space};
+    padding: #{2 * $space};
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
 
     &:hover {
       color: $secondary;
-      background-color: $ui-black-50percent;
+      background-color: $ui-black-25percent;
     }
   }
 }
 
 .drop-down.slide-in {
-  transform: translate(0, 0);
+  transform: translateX(0);
 }

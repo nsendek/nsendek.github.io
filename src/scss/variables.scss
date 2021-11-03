@@ -1,5 +1,16 @@
-
-$primary : #2E294E;
+$primary : #181528;
+$primary-alt : #2e294e; 
 $secondary : #81F4E1;
+$ui-black-25percent: rgba(0,0,0,0.25);
 $ui-black-50percent: rgba(0,0,0,0.5);
-// $font-family :
+$ui-black-75percent: rgba(0,0,0,0.75);
+
+$desktop: 942px;
+$tabletPortrait: 768px;
+$mobileIntermediate: 640px;
+$mobile: 480px;
+
+$small: "only screen and (max-width : #{$mobile - 1})";
+$medium: "only screen and (min-width : #{$mobile}) and (max-width : #{$tabletPortrait - 1})";
+$intermediate: "only screen and (min-width : #{$tabletPortrait}) and (max-width : #{$desktop - 1})";
+$big: "only screen and (min-width : #{$desktop})";

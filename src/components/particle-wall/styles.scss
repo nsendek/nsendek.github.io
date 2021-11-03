@@ -4,9 +4,8 @@
   position: fixed;
   left : 0;
   top : 0;
-  bottom: 0;
-  width: 45%;
-  height: auto;
+  width: 45vw;
+  height: 100vh; // since its fixed don't want it to stretch with view-container growth
 }
 
 .relative-container {

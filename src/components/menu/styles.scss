@@ -7,7 +7,7 @@ $menu-padding : 14px;
 $drop-down-width : 200px;
 
 .menu {
-  position: absolute;
+  position: fixed;
   top : 0px;
   right: 0px;
   padding: $menu-padding;

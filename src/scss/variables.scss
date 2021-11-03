@@ -1,6 +1,9 @@
 $primary : #181528;
 $primary-alt : #2e294e; 
 $secondary : #81F4E1;
+
+$ui-gray : #666;
+$ui-gray2 : #888;
 $ui-black-25percent: rgba(0,0,0,0.25);
 $ui-black-50percent: rgba(0,0,0,0.5);
 $ui-black-75percent: rgba(0,0,0,0.75);
@@ -14,3 +17,5 @@ $small: "only screen and (max-width : #{$mobile - 1})";
 $medium: "only screen and (min-width : #{$mobile}) and (max-width : #{$tabletPortrait - 1})";
 $intermediate: "only screen and (min-width : #{$tabletPortrait}) and (max-width : #{$desktop - 1})";
 $big: "only screen and (min-width : #{$desktop})";
+
+$blur : blur(9px);

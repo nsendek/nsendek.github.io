@@ -18,6 +18,41 @@ img.portrait {
   width: 600px;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+
+  & a:nth-of-type(1) {
+    margin-right: 10px;;
+  }
+
+  & a {
+    width : 90px;
+    padding: 15px 10px;
+    text-align: center;
+    
+    background-color: $primary;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+
+
+    border: 1px solid $primary-alt;
+    color: $ui-gray;
+
+    &:hover {
+      border: 1px solid $secondary;
+      color: $secondary;
+    }
+
+  }
+}
+
+.link  {
+  color: $secondary;  
+}
+
 @media #{$small}, #{$medium}, #{$intermediate}  {
   .about-view {
     display: flex;

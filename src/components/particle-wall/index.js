@@ -14,8 +14,6 @@ import styles from './styles.scss';
 const WALL_BOUNDARY = 25;
 const MAX_VELOCITY = 0.045;
 
-const TOTAL_PARTICLES = 250;
-
 const PARTICLE_DENSITY = 0.0005;
 const MAX_PARTICLES = 350;
 const MIN_PARTICLES = 125;
@@ -30,7 +28,10 @@ const MAX_PARTICLE_SIZE = 14;
 const MIN_PARTICLE_SIZE = 4;
 
 const MAX_FPS = 30;
+const SPEED = 1;
+
 const THROTTLED_FPS = 15;
+const THROTTLE_SPEED = 0.5;
 
 const PIXEL_RESOLUTION = 2; 
 
@@ -63,6 +64,7 @@ class ParticleWall extends PureComponent {
     };
 
     // cursor && numParticles variables do not need to ever trigger render update
+    this.boost = 1;
     this.cursor = null;
     this.numParticles = 0;
     
@@ -94,7 +96,6 @@ class ParticleWall extends PureComponent {
       MIN_PARTICLES,
       MAX_PARTICLES
     );
-    console.log(this.numParticles);
 
     this.createParticles();
     this.startTimer();
@@ -121,8 +122,12 @@ class ParticleWall extends PureComponent {
       if(this.state.timer) {
         if (currentLocation.pathname != "/"){
           this.state.timer.setFPS(THROTTLED_FPS);
+          this.boost = THROTTLE_SPEED;
+          // this.state.timer.stop();
         } else {
           this.state.timer.setFPS(MAX_FPS);
+          this.boost = SPEED;
+          // this.state.timer.restart();
         }
       }
     }
@@ -164,13 +169,15 @@ class ParticleWall extends PureComponent {
     // (update position and change radius based on mouse proximity)
     for (let i = 0 ; i < this.numParticles; i++) {
       const p = this.state.particles[i];
-      p.update(elapsed);
+      p.update(elapsed, this.boost);
 
-      const newY = ( p.pos.y > (this.canvas.height + LINK_LENGTH) )
+      const oldY = p.pos.y;
+
+      const newY = ( oldY > (this.canvas.height + LINK_LENGTH) )
         ? -LINK_LENGTH
-        : ( p.pos.y < -LINK_LENGTH )
+        : ( oldY < -LINK_LENGTH )
           ? this.canvas.height + LINK_LENGTH
-          : p.pos.y;
+          : oldY;
 
       if (this.cursor && p.dist(this.cursor) < MOUSE_BOUNDARY) {
         const boost = (MAX_PARTICLE_SIZE-MIN_PARTICLE_SIZE) * (1-(p.dist(this.cursor) / MOUSE_BOUNDARY));
@@ -181,9 +188,11 @@ class ParticleWall extends PureComponent {
 
       p.setPos(new Vector(p.pos.x, newY));
 
-      ctx.beginPath();
-      ctx.arc(p.pos.x, p.pos.y, p.r, 0, TAU);
-      ctx.fill();
+      if (newY > -MAX_PARTICLE_SIZE && newY < this.canvas.height + MAX_PARTICLE_SIZE) {
+        ctx.beginPath();
+        ctx.arc(p.pos.x, p.pos.y, p.r, 0, TAU);
+        ctx.fill();
+      }
     }
   }
 

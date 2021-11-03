@@ -5,11 +5,10 @@
   right: 0;
   bottom: 0;
   top: 0;
+  left: 0;
 
-  width : 100vw;
-
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: $blur;
+  -webkit-backdrop-filter: $blur;
 
   background-color: $ui-black-25percent;
   color: white;

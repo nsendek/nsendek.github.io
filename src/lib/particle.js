@@ -53,9 +53,9 @@ class Particle {
     this.r = r
   }
 
-  update(elapsed) {
+  update(elapsed, boost = 1) {
     if (this.timestamp && elapsed > this.timestamp) {
-      const dt = elapsed - this.timestamp; 
+      const dt = boost * (elapsed - this.timestamp); 
 
       this.pos = this.pos.add(this.vel.mult(dt));
       this.vel = this.vel.add(this.acc.mult(dt));

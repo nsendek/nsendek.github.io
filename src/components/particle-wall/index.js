@@ -11,7 +11,7 @@ import timerFPS from "../../lib/timer";
 
 import styles from './styles.scss';
 
-const WALL_BOUNDARY = 25;
+const WIDTH_BOUNDARY = 25;
 const MAX_VELOCITY = 0.045;
 
 const PARTICLE_DENSITY = 0.0005;
@@ -42,7 +42,7 @@ function clamp(val, minVal, maxVal) {
 
 function randomX(width) {
   // clipping so particles don't end up on the edge of wall
-  return clamp(width *  Math.random(), WALL_BOUNDARY, width - WALL_BOUNDARY);
+  return clamp(width *  Math.random(), WIDTH_BOUNDARY, width - WIDTH_BOUNDARY);
 }
 
 function randomY(height) {
@@ -64,7 +64,7 @@ class ParticleWall extends PureComponent {
     };
 
     // cursor && numParticles variables do not need to ever trigger render update
-    this.boost = 1;
+    this.boost = props.location.pathname == "/" ? SPEED : THROTTLE_SPEED;
     this.cursor = null;
     this.numParticles = 0;
     
@@ -153,12 +153,11 @@ class ParticleWall extends PureComponent {
    * timer is at throttled frame rate up to MAX_FPS and updates particles
    */
   startTimer() {
-    const { location } = this.props;
     this.setState({
       timer : 
         timerFPS(
           (elapsed) => this.update(elapsed), 
-          location.pathname == "/" ? MAX_FPS : THROTTLED_FPS
+          this.props.location.pathname == "/" ? MAX_FPS : THROTTLED_FPS
         )
     });
   }

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import classnames from 'classnames';
 import { useIntersection } from './intersection-observer.js';
 import styles from './styles.scss';
@@ -19,15 +19,6 @@ const LazyImage = ({ url, thumb, className}) => {
     setIsInView(true);
   });
 
-  const handleOnLoad = () => {
-    setIsLoaded(true);
-  };
-
-  // added this to make sure thumbnail is loaded first (sometimes loading is weird?)
-  const handleLoadThumbnail = () => {
-    setIsLoadedThumb(true)
-  }
-
   return (
     <div
       className={classnames(styles.imageContainer, className)}
@@ -36,18 +27,19 @@ const LazyImage = ({ url, thumb, className}) => {
       {isInView && (
         <>
           <img
-            className={classnames(styles.thumb, {
+            className={classnames(styles.thumbnail, {
               [styles.isLoaded]: !!isLoaded
             })}
             src={thumb}
-            onLoad={handleLoadThumbnail}
+            // added this to make sure thumbnail is loaded first (sometimes loading is weird?)
+            onLoad={() => setIsLoadedThumb(true)}
           />
           {isLoadedThumb && <img
             className={classnames({
               [styles.isLoaded]: !!isLoaded
             })}
             src={url}
-            onLoad={handleOnLoad}
+            onLoad={() => setIsLoaded(true)}
           />}
         </>
       )}

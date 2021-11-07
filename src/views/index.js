@@ -20,7 +20,7 @@ const Views = withRouter(({ location }) => {
   return (
     <TransitionGroup>
       <CSSTransition
-        timeout={400}
+        timeout={700}
         classNames="slide" // global css from styles.css
         key={location.pathname}
       >

@@ -3,11 +3,17 @@ import React from 'react';
 import ViewContainer from "../../components/view-container";
 import styles from "./styles.scss";
 
+import LazyImage  from '../../components/lazy-image';
 
-const About = () => {
+const About = (props) => {
   return (
-    <ViewContainer className={styles.aboutView}>
-      <img className={styles.portrait} src="./static/images/me.jpg" />
+    <ViewContainer id="about" className={styles.aboutView}>
+
+      <LazyImage 
+        url={'static/images/me.jpg'} 
+        thumb={'static/images/me_thumb.jpg'} 
+        className={styles.container} 
+      />
 
       <div className={styles.bio}>
         <p>

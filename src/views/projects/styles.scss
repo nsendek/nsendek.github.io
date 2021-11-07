@@ -14,25 +14,3 @@
   padding: 75px 0;
   overflow-y: scroll;
 }
-
-
-// .img-container {
-//   width: $mobileIntermediate;
-//   min-height: 400px;
-//   overflow: hidden;
-//   display: flex;
-//   border: 2px solid red;
-
-//   & img { 
-//     // img takes up parent width and stuff
-//     // https://stackoverflow.com/questions/3463664/make-an-image-width-100-of-parent-div-but-not-bigger-than-its-own-width
-//     max-width: 100%;
-//     width: $mobileIntermediate;
-//     min-height: 400px;
-//     object-fit: cover;
-//     align-self: center;
-//   }
-
-//   filter: drop-shadow(5px 5px 0px $secondary);
-//   // -webkit-backdrop-filter: drop-shadow(5px 5px 0px $secondary);
-// }

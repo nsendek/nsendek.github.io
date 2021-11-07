@@ -8,6 +8,7 @@ $drop-down-width : 200px;
 
 .menu {
   position: fixed;
+  z-index: 2;
   top : 0px;
   right: 0px;
   padding: $menu-padding;
@@ -67,7 +68,7 @@ $drop-down-width : 200px;
 .drop-down {
   pointer-events: auto;
   position: relative;
-  background-color: $ui-black-50percent;
+  background-color: black;
   width: $drop-down-width;
   margin-top: $space;
   transition: $transition;

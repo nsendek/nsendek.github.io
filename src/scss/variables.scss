@@ -21,9 +21,9 @@ $big: "only screen and (min-width : #{$desktop})";
 $blur : blur(9px);
 
 @mixin rigid-dimensions($width, $height) {
-  // needs to be rigid dimensions so it works in 
-  // all flexboxes without changing dimensions
-  // good for <img> containers
+  // <img> needs to have rigid dimensions so it works in 
+  // all flexboxes without changing dimensions and maintains 
+  // shape while image is still loading
   min-width: $width;
   max-width: $width;
 

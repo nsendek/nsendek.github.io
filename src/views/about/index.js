@@ -11,7 +11,7 @@ const About = (props) => {
 
       <LazyImage 
         url={'static/images/me.jpg'} 
-        thumb={'static/images/me_thumb.jpg'} 
+        thumbnail={'static/images/me_thumb.jpg'} 
         className={styles.container} 
       />
 

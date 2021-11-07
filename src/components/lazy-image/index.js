@@ -8,7 +8,7 @@ import styles from './styles.scss';
  * https://dev.to/shubhamreacts/progressively-loading-images-in-react-40lg
  */
 
-const LazyImage = ({ url, thumb, className}) => {
+const LazyImage = ({ url, thumbnail, className}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoadedThumb, setIsLoadedThumb] = useState(false);
   const [isInView, setIsInView] = useState(false);
@@ -30,7 +30,7 @@ const LazyImage = ({ url, thumb, className}) => {
             className={classnames(styles.thumbnail, {
               [styles.isLoaded]: !!isLoaded
             })}
-            src={thumb}
+            src={thumbnail}
             // added this to make sure thumbnail is loaded first (sometimes loading is weird?)
             onLoad={() => setIsLoadedThumb(true)}
           />

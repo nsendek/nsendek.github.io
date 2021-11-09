@@ -1,6 +1,7 @@
 /* eslint-disable indent */
-import React from 'react'
+import React, {useEffect} from 'react'
 import classNames from 'classnames';
+import {useLocation} from 'react-router-dom';
 
 import styles from "./styles.scss"
 
@@ -17,14 +18,13 @@ const MenuCheckbox = (props) => (
 
 const Menu =() => {
   const [checked, setChecked] = React.useState(false);
+  const location = useLocation();
 
   const handleChange= (e) => {
     setChecked(e.target.checked)
   }
 
   const closeMenu = () => setChecked(false);
-
-  const hash = window.location.hash;
 
   // handle close on offclick
   window.addEventListener('click', function(e){  
@@ -51,25 +51,25 @@ const Menu =() => {
           portfolio
         </a>
         
-        {hash != "#about" && (
+        {location.pathname != "/about" && (
           <a onClick={closeMenu} href="#about" >
             about
           </a>
           )}
 
-        {hash != "#projects" && (
+        {location.pathname != "/projects" && (
           <a onClick={closeMenu} href="#projects">
             projects
           </a>
           )}
 
-        {/* {hash != "#art" && (
+        {/* {location.pathname != "/art" && (
           <a onClick={closeMenu} href="#art">
             art
           </a>
           )} */}
 
-        {hash && (
+        {location.pathname != "/" && (
           <a onClick={closeMenu} href="#">
             home
           </a>

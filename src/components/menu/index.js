@@ -8,9 +8,9 @@ const MenuCheckbox = (props) => (
   <div className={styles.menuCheckbox}>
     <label htmlFor="check">
       <input checked={props.checked} onChange={props.onChange} type="checkbox" id="check"/> 
-      <span></span>
-      <span></span>
-      <span></span>
+      <span />
+      <span />
+      <span />
     </label>
   </div> 
 );
@@ -25,7 +25,6 @@ const Menu =() => {
   const closeMenu = () => setChecked(false);
 
   const hash = window.location.hash;
-  const validHashes = ["#art", "#about", "#projects"]
 
   // handle close on offclick
   window.addEventListener('click', function(e){  
@@ -70,7 +69,7 @@ const Menu =() => {
           </a>
           )} */}
 
-        {hash && validHashes.includes(hash) && (
+        {hash && (
           <a onClick={closeMenu} href="#">
             home
           </a>

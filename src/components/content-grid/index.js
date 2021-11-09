@@ -1,4 +1,5 @@
-import React, {useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useHistory } from "react-router-dom"
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -7,7 +8,7 @@ import LazyImage from '../lazy-image';
 
 const GridCell = ({data, onClick, clicked}) => (
   <div 
-    // onClick={onClick} 
+    onClick={onClick} 
     className="cell"
   > 
      
@@ -28,14 +29,12 @@ const GridRow = (props) => {
 };
 
 const Grid = (props) => {
+  let history = useHistory();
+
   const gridRef = useRef();
   const [columns, setColumns] = useState(null);
   
-  const defaultObjects =  props.contents.map(
-    (datum, i) => ({ 
-      ...datum, 
-      id : `cell${i}`,
-    }));
+  const defaultObjects =  props.contents;
 
   const [gridObjects, setGridContents ] = useState(defaultObjects);
   const [expandedContents, setExpandedContents] = useState([]);
@@ -89,18 +88,18 @@ const Grid = (props) => {
   //   });
   // }
 
-  const handleClick = (id) => {
-    
+  const handleClick = (path) => {
+    history.push(path);
   }
   
   return (
     <div ref={gridRef} className={classNames("grid-container", props.className)}>
 
       {gridObjects.map((datum,i) => (
-        datum.id.includes('cell')
+        !datum.id.includes('row')
           ? <GridCell 
             clicked={expandedContents.includes(datum.id)} 
-            onClick={() => handleClick(datum.id)} 
+            onClick={() => handleClick(datum.path)} 
             key={datum.id} 
             data={datum} 
           />
@@ -113,7 +112,10 @@ const Grid = (props) => {
 
 Grid.propTypes = {
   contents : PropTypes.arrayOf(PropTypes.shape({
-    thumbnail : PropTypes.string.isRequired
+    id : PropTypes.string.isRequired,
+    title : PropTypes.string.isRequired,
+    thumbnail : PropTypes.string.isRequired,
+    path : PropTypes.string.isRequired,
   })).isRequired,
   className : PropTypes.string
 }

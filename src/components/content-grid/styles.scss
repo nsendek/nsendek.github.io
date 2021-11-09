@@ -1,0 +1,89 @@
+@import "../../scss/variables.scss";
+
+$cell-margin : 15px;
+
+.thumbnail {
+  @include rigid-dimensions(100%, 100%);
+  margin-bottom: 20px;
+  margin-right: 20px;
+  
+
+  &:hover {
+    @include filter(brightness(80%));
+    cursor: pointer;
+  }
+
+  &.clicked {
+    @include filter(brightness(70%));
+  }
+
+  & ~ .label {
+    color : white;
+    // z-index: 5;
+    padding-left: 25px; 
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $ui-black-50percent;
+
+    & h2 {
+      font-weight: normal;
+    }
+  }
+}
+
+// .label {
+//   color : red;
+//   z-index: 5;
+//   position: absolute;
+//   width: 100%;
+//   background-color: grey;
+// }
+
+.row {
+  background-color: green;
+  transition: 1s;
+  opacity: 1;
+  height: 10px;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+:global(.grid-container) {
+  display: grid;
+}
+
+:global(.cell) {
+  margin: $cell-margin;
+  position: relative; 
+}
+
+@mixin gridStyles($cols ,$max-width : 75vw) {
+  $width : #{$max-width / $cols};
+
+  &:global(.grid-container)  {
+    grid-template-columns: repeat($cols , minmax($width, 1fr));
+
+    & :global(.cell) {
+      height: calc(#{$width} - #{2 * $cell-margin});
+    }
+  }
+}
+
+// ----------------------------------------------------------
+// default behavior of the grid component unless overwritten 
+// width of 100vw and max for columns per row
+@media #{$big} {
+  @include gridStyles(4, 100vw );
+}
+@media #{$intermediate} {
+  @include gridStyles(3, 100vw );
+}
+@media #{$medium} {
+  @include gridStyles(2, 100vw );
+}
+@media #{$small} {
+  @include gridStyles(1, 100vw );
+}
+// ----------------------------------------------------------

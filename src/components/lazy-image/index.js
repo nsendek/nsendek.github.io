@@ -10,7 +10,8 @@ import styles from './styles.scss';
 
 const LazyImage = ({ url, thumbnail, className}) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isLoadedThumb, setIsLoadedThumb] = useState(false);
+  // thumbnail URL is optional parameter so this can be used as a regular image component
+  const [isLoadedThumb, setIsLoadedThumb] = useState(!!thumbnail ? false : true);
   const [isInView, setIsInView] = useState(false);
 
   const imgRef = useRef();

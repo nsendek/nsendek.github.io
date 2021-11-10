@@ -13,7 +13,7 @@ const GridCell = ({data, onClick, clicked}) => (
   >  
     <LazyImage 
       className={classNames(styles.thumbnail, {[styles.clicked] : clicked })} 
-      url={data.thumbnail} 
+      src={data.thumbnail} 
     />
     <div className={styles.label} > <h2> {data.title} </h2> </div>
   </div>

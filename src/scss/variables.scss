@@ -18,8 +18,6 @@ $medium: "only screen and (min-width : #{$mobile}) and (max-width : #{$tabletPor
 $intermediate: "only screen and (min-width : #{$tabletPortrait}) and (max-width : #{$desktop - 1})";
 $big: "only screen and (min-width : #{$desktop})";
 
-$blur : blur(9px);
-
 @mixin rigid-dimensions($width, $height) {
   // <img> needs to have rigid dimensions so it works in 
   // all flexboxes without changing dimensions and maintains 
@@ -34,5 +32,10 @@ $blur : blur(9px);
 // Safari sucks
 @mixin filter($filter) {
   filter : $filter;
+  -webkit-backdrop-filter: $filter;
+}
+
+@mixin backdrop-filter($filter) {
+  backdrop-filter : $filter;
   -webkit-backdrop-filter: $filter;
 }

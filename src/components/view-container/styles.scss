@@ -4,8 +4,7 @@
   left: 0;
   right: 0;
   min-height: 100vh;
-  backdrop-filter: $blur;
-  -webkit-backdrop-filter: $blur;
+  @include backdrop-filter(blur(9px));
 
   background-color: $ui-black-25percent;
   color: white;

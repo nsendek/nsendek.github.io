@@ -10,7 +10,6 @@ $cell-margin : 15px;
 
   &:hover {
     @include filter(brightness(80%));
-    cursor: pointer;
   }
 
   &.clicked {
@@ -33,14 +32,6 @@ $cell-margin : 15px;
   }
 }
 
-// .label {
-//   color : red;
-//   z-index: 5;
-//   position: absolute;
-//   width: 100%;
-//   background-color: grey;
-// }
-
 .row {
   background-color: green;
   transition: 1s;
@@ -56,7 +47,8 @@ $cell-margin : 15px;
 
 :global(.cell) {
   margin: $cell-margin;
-  position: relative; 
+  position: relative;
+  cursor: pointer;
 }
 
 @mixin gridStyles($cols ,$max-width : 75vw) {

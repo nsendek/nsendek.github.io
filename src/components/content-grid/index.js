@@ -10,16 +10,14 @@ const GridCell = ({data, onClick, clicked}) => (
   <div 
     onClick={onClick} 
     className="cell"
-  > 
-     
+  >  
     <LazyImage 
       className={classNames(styles.thumbnail, {[styles.clicked] : clicked })} 
       url={data.thumbnail} 
     />
-    <div className={styles.label} > <h2> {data.id} </h2> </div>
-
+    <div className={styles.label} > <h2> {data.title} </h2> </div>
   </div>
-)
+);
 
 const GridRow = (props) => {
   return (
@@ -34,7 +32,10 @@ const Grid = (props) => {
   const gridRef = useRef();
   const [columns, setColumns] = useState(null);
   
-  const defaultObjects =  props.contents;
+  const defaultObjects =  props.contents.map( (datum,i) => ({
+    ...datum,
+    id : `cell${i}`
+  }));
 
   const [gridObjects, setGridContents ] = useState(defaultObjects);
   const [expandedContents, setExpandedContents] = useState([]);
@@ -96,7 +97,7 @@ const Grid = (props) => {
     <div ref={gridRef} className={classNames("grid-container", props.className)}>
 
       {gridObjects.map((datum,i) => (
-        !datum.id.includes('row')
+        datum.id.includes('cell')
           ? <GridCell 
             clicked={expandedContents.includes(datum.id)} 
             onClick={() => handleClick(datum.path)} 
@@ -112,7 +113,6 @@ const Grid = (props) => {
 
 Grid.propTypes = {
   contents : PropTypes.arrayOf(PropTypes.shape({
-    id : PropTypes.string.isRequired,
     title : PropTypes.string.isRequired,
     thumbnail : PropTypes.string.isRequired,
     path : PropTypes.string.isRequired,

@@ -10,8 +10,8 @@ const About = (props) => {
     <ViewContainer id="about" className={styles.aboutView}>
 
       <LazyImage 
-        url={'static/images/me.jpg'} 
-        thumbnail={'static/images/me_thumb.jpg'} 
+        src={'static/images/me.jpg'} 
+        thumbnail={'static/images/me.thumbnail.jpg'} 
         className={styles.container} 
       />
 

@@ -95,7 +95,7 @@ module.exports = (env, argv) => {
             //  https://stackoverflow.com/questions/54217627/using-webpack-to-optimise-unreferenced-images-img-loader
             { // files in static/images need a created thumbnail version of the original (i.e. 300px wide)
               from: 'static/images/**/*',
-              to: '[path][name]_thumb[ext]',
+              to: '[path][name].thumbnail[ext]',
               transform: content => sharp(content).resize(300).toBuffer(),
             },
           ]

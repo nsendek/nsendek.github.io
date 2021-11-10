@@ -1,28 +1,20 @@
 import React from 'react';
-import { useParams , Link} from "react-router-dom";
+import { Route, Redirect,  Switch} from "react-router-dom";
 import ViewContainer from "../../components/view-container";
 
-import {components} from '../../contents';
+import contents from '../../contents';
 
-const NotFound = () => (
-  <div>
-    <h1>404 - Not Found!</h1>
-    <Link to="/">
-      Go Home
-    </Link>
-  </div>
+const Project = () => (
+  <ViewContainer>
+    <Switch>
+      {contents.map( c => (
+        <Route key={c.path} exact path={c.path} component={c.component} />
+      ))}
+      <Route path='*'> 
+        <Redirect to="/404" />
+      </Route>
+    </Switch>
+  </ViewContainer>
 );
-
-const  Project = () => {
-  const params = useParams();
-
-  const Content = components[params.id] || NotFound;
-
-  return (
-    <ViewContainer>
-      <Content />
-    </ViewContainer>
-  )
-};
 
 export default Project;

@@ -4,7 +4,6 @@
 .slide-exit {
   transform: translateX(0);
 }
-
 .slide-enter-active {
   z-index: 1;
   position: absolute;

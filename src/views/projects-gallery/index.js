@@ -3,12 +3,12 @@ import ViewContainer from "../../components/view-container";
 import Grid from "../../components/content-grid";
 import styles from "./styles.scss";
 
-import { simple } from "../../contents";
+import contents from "../../contents";
 
 const ProjectsGallery = (props) => {
   return (
     <ViewContainer className={styles.projectsView}>
-      <Grid className={styles.grid} contents={simple} />
+      <Grid className={styles.grid} contents={contents} />
     </ViewContainer>
   );
 };

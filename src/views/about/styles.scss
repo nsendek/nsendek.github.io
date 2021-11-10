@@ -75,22 +75,3 @@ $ratio : 3/2;
     margin-right : 0;
   }
 }
-
-// .img-container {
-//   width: $mobileIntermediate;
-//   height: 400px;
-//   overflow: hidden;
-//   display: flex;
-//   // border: 2px solid red;
-
-//   & img { 
-//     // img takes up parent width and stuff
-//     // https://stackoverflow.com/questions/3463664/make-an-image-width-100-of-parent-div-but-not-bigger-than-its-own-width
-//     max-width: 100%;
-//     object-fit: cover;
-//     align-self: center;
-//   }
-
-//   filter: drop-shadow(5px 5px 0px $secondary);
-//   // -webkit-backdrop-filter: drop-shadow(5px 5px 0px $secondary);
-// }

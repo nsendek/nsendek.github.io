@@ -1,12 +1,4 @@
-@import "../../scss/variables.scss";
 @import "../../components/content-grid/styles.scss";
-
-.image {
-  @include rigid-dimensions($mobileIntermediate, 400px);
-
-  margin-bottom: 20px;
-  margin-right: 20px;
-}
 
 .projects-view {
   display: flex;

@@ -170,7 +170,7 @@ class ParticleWall extends PureComponent {
       const p = this.state.particles[i];
       p.update(elapsed, this.boost);
 
-      const oldY = p.pos.y;
+      const oldY = p.y;
 
       const newY = ( oldY > (this.canvas.height + LINK_LENGTH) )
         ? -LINK_LENGTH
@@ -185,11 +185,11 @@ class ParticleWall extends PureComponent {
         p.setSize(MIN_PARTICLE_SIZE);
       }
 
-      p.setPos(new Vector(p.pos.x, newY));
+      p.setPos(new Vector(p.x, newY));
 
       if (newY > -MAX_PARTICLE_SIZE && newY < this.canvas.height + MAX_PARTICLE_SIZE) {
         ctx.beginPath();
-        ctx.arc(p.pos.x, p.pos.y, p.r, 0, TAU);
+        ctx.arc(p.x, p.y, p.r, 0, TAU);
         ctx.fill();
       }
     }
@@ -200,14 +200,14 @@ class ParticleWall extends PureComponent {
     // did this because performance was bad on Safari and some mobile browsers
     // quadtree constuction is also O(n) (i think)
     const quadtree = d3.quadtree()
-      .x(d => d.pos.x)
-      .y(d => d.pos.y)
+      .x(d => d.x)
+      .y(d => d.y)
       .addAll(this.state.particles);
       
     for (var i = 0; i < this.numParticles; ++i) {
       const p1 = this.state.particles[i];
-      let x = p1.pos.x;
-      let y = p1.pos.y;
+      let x = p1.x;
+      let y = p1.y;
 
       const neighbors = search(quadtree, x-LINK_LENGTH, y-LINK_LENGTH, x+LINK_LENGTH, y+LINK_LENGTH);
       const numNeighbors = neighbors.length;
@@ -224,8 +224,8 @@ class ParticleWall extends PureComponent {
             ctx.globalAlpha = factor;
             ctx.lineWidth = MAX_LINK_WIDTH * factor;
             ctx.beginPath();
-            ctx.moveTo(p1.pos.x, p1.pos.y);
-            ctx.lineTo(p2.pos.x, p2.pos.y);
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
             ctx.stroke();
           }
         }

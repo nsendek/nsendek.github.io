@@ -31,9 +31,7 @@ function timerFPS(callback, fps) {
 
   return {
     stop : () => t.stop(),
-    setFPS : (fps) => {
-      fpsInterval = 1000/fps;
-    },
+    setFPS : (fps) => (fpsInterval = 1000/fps),
     restart : () => t.restart(callback)
   }
 }

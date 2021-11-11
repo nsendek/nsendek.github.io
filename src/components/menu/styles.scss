@@ -35,7 +35,7 @@ $drop-down-width : 200px;
     cursor: pointer;
 
     &:hover span {
-      background: #81F4E1;
+      background: $secondary;
     }
   }
 
@@ -45,7 +45,7 @@ $drop-down-width : 200px;
 
   & label span {
     width: 100%;
-    background: #fff;
+    background: white;
     border-radius: 10px;
     height: #{1px * $size};
     margin: #{1px * $size} 0;

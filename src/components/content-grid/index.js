@@ -27,7 +27,7 @@ const GridRow = (props) => {
 };
 
 const Grid = (props) => {
-  let history = useHistory();
+  const history = useHistory();
 
   const gridRef = useRef();
   const [columns, setColumns] = useState(null);
@@ -54,7 +54,7 @@ const Grid = (props) => {
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
-  });
+  }, []);
 
   // useEffect(() => {
   //   // rearrange contents but row object between 
@@ -117,7 +117,7 @@ Grid.propTypes = {
     thumbnail : PropTypes.string.isRequired,
     path : PropTypes.string.isRequired,
   })).isRequired,
-  className : PropTypes.string
+  className : PropTypes.string.isRequired
 }
 
 export default Grid;

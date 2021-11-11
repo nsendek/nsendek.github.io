@@ -3,6 +3,9 @@ import P2 from "./project2";
 import P3 from "./project3";
 import P4 from "./project4";
 
+/**
+ * EACH OBJECT MUST HAVE A UNIQUE PATH
+ */
 export default [
   {
     title : "Project 1",

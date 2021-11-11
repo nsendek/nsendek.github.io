@@ -7,8 +7,8 @@ import styles from "./styles.scss"
 
 const MenuCheckbox = ({ checked, onChange }) => (
   <div className={styles.menuCheckbox}>
+    <input checked={checked} onChange={onChange} type="checkbox" id="check"/> 
     <label htmlFor="check">
-      <input checked={checked} onChange={onChange} type="checkbox" id="check"/> 
       <span />
       <span />
       <span />

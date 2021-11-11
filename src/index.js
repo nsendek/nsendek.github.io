@@ -23,11 +23,12 @@ const Website = () => (
 
       {/* Using Hash routes because github.io doesn't allow routing configuration */}
       <HashRouter hashType="noslash">
+        <Menu />
+
         <ScrollRestore />
         <ParticleWall />
         <Views />
 
-        <Menu />
       </HashRouter>
 
       

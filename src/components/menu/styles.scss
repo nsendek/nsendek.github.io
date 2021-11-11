@@ -39,8 +39,9 @@ $drop-down-width : 200px;
     }
   }
 
-  & label input[type="checkbox"] {
-    display:none;
+  & input[type="checkbox"] {
+    position: absolute;
+    opacity: 0; // hidden but still focusable
   }
 
   & label span {
@@ -52,16 +53,23 @@ $drop-down-width : 200px;
     transition: $transition;
   }
 
-  & input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+  & input[type="checkbox"]:checked + label span:nth-of-type(1) {
     transform: translateY(#{3px * $size}) rotatez(45deg) scaleX(1.1);
   }
 
-  & input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+  & input[type="checkbox"]:checked + label span:nth-of-type(2) {
     transform:  rotatez(-45deg) scaleX(1.1);
   }
 
-  & input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+  & input[type="checkbox"]:checked + label span:nth-of-type(3) {
     transform:  translateY(-#{3px * $size}) rotatez(-45deg) scaleX(1.1);
+  }
+
+  & input[type="checkbox"]:focus + label {
+    outline: auto;
+    & span {
+      background: $secondary;
+    }
   }
 }
 
@@ -80,6 +88,7 @@ $drop-down-width : 200px;
   display: flex;
   flex-direction: column;
   text-align: center;
+  visibility: hidden;
 
   & a {
     &:nth-of-type(n+2) {
@@ -89,6 +98,7 @@ $drop-down-width : 200px;
     color: white;
     padding: #{2 * $space};
     text-decoration: none;
+    
     text-transform: uppercase;
     cursor: pointer;
 
@@ -100,5 +110,6 @@ $drop-down-width : 200px;
 }
 
 .drop-down.slide-in {
+  visibility: visible;
   transform: translateX(0);
 }

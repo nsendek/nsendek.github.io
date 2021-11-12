@@ -1,20 +1,29 @@
-/* eslint-disable indent */
-import React, {useEffect} from 'react'
+// /* eslint-disable indent */
+import React from 'react'
 import classNames from 'classnames';
 import {useLocation} from 'react-router-dom';
 
 import styles from "./styles.scss"
 
-const MenuCheckbox = ({ checked, onChange }) => (
-  <div className={styles.menuCheckbox}>
-    <input checked={checked} onChange={onChange} type="checkbox" id="check"/> 
-    <label htmlFor="check">
-      <span />
-      <span />
-      <span />
-    </label>
-  </div> 
-);
+const MenuCheckbox = ({ checked, onChange }) => { 
+  return (
+    <div className={styles.menuCheckbox}>
+      <input
+        checked={checked} 
+        onChange={() => onChange(!checked)}
+        type="checkbox" id="check"
+      /> 
+      <label 
+        tabIndex="0"
+        onKeyPress={(e)=> e.key === " " && onChange(!checked)}
+        htmlFor="check"
+      >
+        <span />
+        <span />
+        <span />  
+      </label>
+    </div>
+  )};
 
 const Menu =() => {
   const [checked, setChecked] = React.useState(false);
@@ -36,7 +45,7 @@ const Menu =() => {
 
   return (
     <div id="menu-dropdown" className={styles.menu}>
-      <MenuCheckbox checked={checked} onChange={handleChange} />
+      <MenuCheckbox checked={checked} onChange={setChecked} />
 
       <div 
         className={classNames(
@@ -55,25 +64,25 @@ const Menu =() => {
           <a onClick={closeMenu} href="#about" >
             about
           </a>
-          )}
+        )}
 
         {location.pathname != "/projects" && (
           <a onClick={closeMenu} href="#projects">
             projects
           </a>
-          )}
+        )}
 
         {/* {location.pathname != "/art" && (
           <a onClick={closeMenu} href="#art">
             art
           </a>
-          )} */}
+        )} */}
 
         {location.pathname != "/" && (
           <a onClick={closeMenu} href="#">
             home
           </a>
-          )}
+        )}
 
       </div>
     </div>

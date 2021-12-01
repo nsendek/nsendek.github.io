@@ -11,49 +11,27 @@ import timerFPS from "../../lib/timer";
 
 import styles from './styles.scss';
 
-const WIDTH_BOUNDARY = 25;
-const MAX_VELOCITY = 0.045;
-
-const PARTICLE_DENSITY = 0.0005;
-const MAX_PARTICLES = 350;
-const MIN_PARTICLES = 125;
-
-const PARTICLE_COLOR = "#81F4E1";
-const TAU = 2 * Math.PI;
-
-const LINK_LENGTH = 225;
-const MAX_LINK_WIDTH = 3;
-const MOUSE_BOUNDARY = 350;
-const MAX_PARTICLE_SIZE = 14;
-const MIN_PARTICLE_SIZE = 4;
-
-const MAX_FPS = 30;
-const SPEED = 1;
-
-const THROTTLED_FPS = 15;
-const THROTTLE_SPEED = 0.5;
-
-const PIXEL_RESOLUTION = 2; 
-
-
-function clamp(val, minVal, maxVal) {
-  return Math.min(Math.max(minVal, val), maxVal);
-}
-
-function randomX(width) {
-  // clipping so particles don't end up on the edge of wall
-  return clamp(width *  Math.random(), WIDTH_BOUNDARY, width - WIDTH_BOUNDARY);
-}
-
-function randomY(height) {
-  // y boundary goes LINK_LENGTH above and below window viewbox
-  // so place a few particles there
-  return (height + 2*LINK_LENGTH) *  Math.random() - LINK_LENGTH;
-}
-
-function randomVel () {
-  return new Vector(0, MAX_VELOCITY * 2 * (Math.random() - 0.5));
-}
+import {
+  PARTICLE_DENSITY,
+  MAX_PARTICLES,
+  MIN_PARTICLES,
+  PARTICLE_COLOR,
+  TAU,
+  LINK_LENGTH,
+  MAX_LINK_WIDTH,
+  MOUSE_BOUNDARY,
+  MAX_PARTICLE_SIZE,
+  MIN_PARTICLE_SIZE,
+  MAX_FPS,
+  SPEED,
+  THROTTLED_FPS,
+  THROTTLE_SPEED,
+  PIXEL_RESOLUTION,
+  clamp,
+  randomX,
+  randomY,
+  randomVel
+} from "./constants.js";
 
 class ParticleWall extends PureComponent {
   constructor(props) {
@@ -142,7 +120,7 @@ class ParticleWall extends PureComponent {
 
       const particle = new Particle(x, y, MIN_PARTICLE_SIZE);
 
-      particle.setVel(randomVel().mult(PIXEL_RESOLUTION));
+      particle.setVel(new Vector(0, randomVel() * PIXEL_RESOLUTION));
       particles.push(particle);
     }
 
